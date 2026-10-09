@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Release system: `docs/releasing.md`, `.github/release.yml`, release-notes template, reusable `release` workflow, public/private/version-pr workflow templates, `brand/` placeholders, repo metadata + pre-release checklists, `scripts/create-release-tag.mjs`.
+- Labels `breaking-change` and `chore` for release-notes grouping.
 - `.lakehouse/org.json` as the source of truth for `orgName`, `brand`, `packageScope`, and `domain`.
 - `.lakehouse/pins.json` for action SHAs and reusable workflow paths; `scripts/check-pins.mjs`.
 - Org-name lint (`scripts/org-name-lint.mjs`) + `org-defaults-ci` workflow + `org-name-lint` workflow template.

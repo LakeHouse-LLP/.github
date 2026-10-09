@@ -67,7 +67,13 @@ Agents and contributors must **never**:
 
 - Repo scripts under `scripts/` are **cross-platform Node `.mjs`** (Sen develops on Mac and Windows).
 - Do **not** add bash `.sh` (or Python) scripts for house tooling — use `node scripts/….mjs`.
-- Examples: `node scripts/org-name-lint.mjs`, `node scripts/check-pins.mjs`.
+- Examples: `node scripts/org-name-lint.mjs`, `node scripts/check-pins.mjs`, `node scripts/create-release-tag.mjs`.
+
+## Releases
+
+- Follow [docs/releasing.md](docs/releasing.md). Draft releases first; Sen publishes.
+- Only CI creates release tags (`create-release-tag.mjs`). Never tag releases by hand.
+- npm via **OIDC trusted publishing** (no long-lived tokens). Immutable releases = Sen-only UI setting.
 
 ## Allowed defaults for agents
 

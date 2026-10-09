@@ -1,0 +1,6 @@
+{
+  "name": "LakeHouse release (public)",
+  "description": "Draft GitHub Release pipeline for public repos: checksums, attest-build-provenance, npm OIDC. GitHub-hosted runners only.",
+  "iconName": "octicon tag",
+  "categories": ["Continuous integration", "Publishing", "Automation"]
+}
