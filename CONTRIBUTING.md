@@ -1,6 +1,6 @@
 # Contributing to LakeHouse Studio
 
-Thanks for stopping by — we are glad you are here. This guide gets you productive quickly on **Mac or Windows**. Most public repos are standalone **widgets** (fork, customize, load into a LakeHouse Studio office — see [docs/naming.md](docs/naming.md)). Sen reviews and merges; please open a **draft PR** and do not merge into `Template-*` or `.github` yourself.
+Thanks for stopping by — we are glad you are here. This guide gets you productive quickly on **Mac or Windows**. Public repos are either LakeHouse **widgets** (`Template-Widget`) or general **open-source** projects (`Template-OpenSource`) — see [docs/naming.md](docs/naming.md#which-template-should-i-use). Sen reviews and merges; please open a **draft PR** and do not merge into `Template-*` or `.github` yourself.
 
 House rules (agents and humans): [AGENTS.md](AGENTS.md). Code of conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Governance & response times: [GOVERNANCE.md](GOVERNANCE.md).
 
@@ -60,7 +60,7 @@ git commit -s -m "Describe your change"
 - **ZERO COST** — GitHub Free only.
 - **Runners** — Public: GitHub-hosted. Private: self-hosted. Never self-hosted on public.
 - **Epics** — [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo), not GitHub Issues.
-- **Naming** — Public repos are widgets (`Template-Widget` scaffold; plain names in the wild). See [docs/naming.md](docs/naming.md).
+- **Naming** — Four templates (`Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource`). See [docs/naming.md](docs/naming.md).
 - **Identity** — Do not hardcode the GitHub org login; use `org.json` or `${{ github.repository_owner }}`.
 
 ## Stacked PRs

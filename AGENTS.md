@@ -16,13 +16,14 @@ Epics live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/Sen
 | Public + self-hosted | **Never** |
 | Merge method | **Merge commits only** (never squash or rebase-merge) |
 | Epics | SenZhang-Plus/SenZhang-Todo |
-| Templates | `Template-Monorepo` (private host), `Template-Sandbox`, `Template-Widget` (public widget scaffold; was `Template-OpenSource`) |
+| Templates | Four: `Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource` — see [docs/naming.md](docs/naming.md) |
 | Org defaults | This `.github` / `defaultsRepo` repository |
 | Disposable private | `sandbox-*`, `legacy-*` |
-| Public widgets | Plain names — one standalone agent-friendly widget per repo ([docs/naming.md](docs/naming.md)) |
+| Public widgets | From **Template-Widget** — plain names; LakeHouse host extensibility |
+| Public OSS | From **Template-OpenSource** — plain names; **no** widget concepts |
 | Package scope | Brand-based from `org.json` (`packageScope`) — **not** the org login; widgets use `@lakehouse/widget-sdk` |
 | Public links | Custom `domain` from `org.json` — **never** `*.github.io` |
-| Retired names | See [retired-names.txt](retired-names.txt) — do not reuse |
+| Retired names | See [retired-names.txt](retired-names.txt) — do not reuse (`Template-OpenSource` is **active**, not retired) |
 | Org rename | [docs/org-rename-runbook.md](docs/org-rename-runbook.md) |
 
 Settings only Sen changes in the GitHub UI: [docs/sen-only-github-settings.md](docs/sen-only-github-settings.md).

@@ -8,5 +8,9 @@
 #   - Do not create new repositories that reuse these names.
 #   - After an org rename, record the old org login here and squat it (see docs/org-rename-runbook.md).
 #
+# Note (2026-10-09): An earlier repository named Template-OpenSource was renamed to
+# Template-Widget. The name Template-OpenSource is ACTIVE again as a recreated
+# general-purpose open-source template (not a LakeHouse widget scaffold). Do not
+# list Template-OpenSource below.
+#
 LakeHouse-Template  # renamed to Template-Monorepo
-Template-OpenSource  # renamed to Template-Widget

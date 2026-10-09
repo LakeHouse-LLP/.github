@@ -1,37 +1,42 @@
-# Discoverability standard (org + Template-Widget)
+# Discoverability standard (org + public templates)
 
 Zero-cost GitHub-side SEO for **LakeHouse Studio**. Brand tokens: dark-only, accent `#7DFFFF` ([`brand/`](../brand/)). Domain from [`.lakehouse/org.json`](../.lakehouse/org.json) — never `*.github.io`.
 
-Scope: this `.github` defaults repo, **Template-Widget**, and **public widget** repos created from it (one standalone agent-friendly widget per repo). Naming: [naming.md](naming.md).
+Scope: this `.github` defaults repo, **Template-Widget**, **Template-OpenSource**, and public repos created from either. Naming / chooser: [naming.md](naming.md).
+
+| Public kind | Template | SEO angle |
+| --- | --- | --- |
+| LakeHouse **widget** | Template-Widget | Loadable widget for the LakeHouse host; agent-friendly |
+| General **open-source** | Template-OpenSource | Normal OSS product — **no** widget/`widget.json` wording |
 
 ## Repository description
 
-- One or two sentences; lead with **LakeHouse Studio** or the **widget** name.
-- Say it is a **widget** (loadable into the designer office) and who it is for (designers / small offices / agents).
+- One or two sentences; lead with **LakeHouse Studio** or the product/widget name.
+- Widgets: say it is a **widget** for the LakeHouse office. OSS: say what the tool is — do not mention widgets or the host.
 - No client names, no “WIP” as the permanent blurb.
 
 ## Topics (8–20)
 
-Use **8 to 20** relevant lowercase topics. Prefer brand + widget keywords over the GitHub org login (rename-safe).
+Use **8 to 20** relevant lowercase topics. Prefer brand + domain keywords over the GitHub org login (rename-safe).
 
-Suggested pool (pick what fits; do not stuff all of them):
+**Shared pool:** `lakehouse-studio`, `lakehouse`, `design-tools`, `typescript`, `opensource`, plus stack tags.
 
-`lakehouse-studio`, `lakehouse`, `widget`, `widgets`, `design-tools`, `revit`, `rhino`, `grasshopper`, `bim`, `aec`, `architecture`, `indesign`, `typescript`, `agent-friendly`, `opensource`
+**Widget repos (add):** `widget`, `widgets`, `agent-friendly`, and domain tags (`revit`, `rhino`, `grasshopper`, `bim`, `aec`, `architecture`, `indesign`, …) when relevant.
+
+**Template-OpenSource / non-widget OSS:** use the shared pool + domain tags; **omit** `widget` / `widgets` unless the project truly is unrelated software that happens to use that word.
 
 CI enforces the count via the discoverability check (see below).
 
 ## README first paragraph
 
-The **first paragraph** after the title/logo must be keyword-rich and human:
+Keyword-rich and human:
 
-- Name the **widget** and **LakeHouse Studio**.
-- State that it is a standalone, forkable **widget** for the digital office / agents.
-- Name the audience (designers and small offices).
-- Avoid marketing fluff with no nouns searchers use.
+- **Widgets:** name the widget + LakeHouse Studio; say forkable/loadable into the office; audience (designers / small offices / agents).
+- **OSS (Template-OpenSource):** name the product; category and audience; **no** LakeHouse widget/host contract language.
 
 ## Social preview
 
-- Upload **1280×640** [`brand/social-preview.png`](../brand/social-preview.png) (or a widget-specific dark variant).
+- Upload **1280×640** [`brand/social-preview.png`](../brand/social-preview.png) (or a product-specific dark variant).
 - Dark canvas only; accent `#7DFFFF`; no client/Ennead content.
 
 ## Homepage URL
@@ -41,20 +46,20 @@ The **first paragraph** after the title/logo must be keyword-rich and human:
 
 ## Releases help ranking
 
-Ship **regular tagged releases** ([releasing.md](releasing.md)) with loadable widget bundles + `widget.json` when applicable. Fresh releases improve GitHub search and social trust.
+Ship **regular tagged releases** ([releasing.md](releasing.md)). Widgets should attach loadable bundles + `widget.json` when applicable. OSS products follow normal SemVer assets.
 
 ## CITATION.cff
 
-Citable widgets should include a root [`CITATION.cff`](../CITATION.cff) (see Template-Widget). Keep `title` / `alias` aligned with **LakeHouse Studio** branding.
+Citable public repos should include a root [`CITATION.cff`](../CITATION.cff). Keep branding aligned with **LakeHouse Studio** where appropriate.
 
 ## Pinned repositories
 
 Sen pins up to six org repos. Recommended order:
 
-1. Flagship **public widget** repo(s) users or agents should try first  
-2. **Docs site** repo or the repo that hosts the org docs entrypoint (when it exists)  
-3. `Template-Widget` (fork / scaffold entry)  
-4. Optionally advertise the private host only if Sen wants that visibility (usually keep private)
+1. Flagship **public widget** and/or **OSS product** repo(s)  
+2. **Docs site** entrypoint (when it exists)  
+3. `Template-Widget` and/or `Template-OpenSource` (as scaffolds you want people to find)  
+4. Keep `Template-Monorepo` / sandboxes unpinned (private)
 
 Do not pin `sandbox-*`, `legacy-*`, or empty squat leftovers. Revisit pins when a launch checklist item ships ([launch-checklist.md](launch-checklist.md)).
 
@@ -62,9 +67,9 @@ Do not pin `sandbox-*`, `legacy-*`, or empty squat leftovers. Revisit pins when 
 
 Source: [`profile/README.md`](../profile/README.md).
 
-- Lead with **LakeHouse Studio** as a modular digital office; public widgets + private host.
-- Link docs via custom `domain`, defaults repo, and SenZhang-Todo.
-- Keep it short; details live in widget READMEs.
+- Lead with **LakeHouse Studio**; mention **both** public paths (widgets + general OSS).
+- Link the [which template](naming.md#which-template-should-i-use) guide.
+- Keep it short; details live in product/widget READMEs.
 
 ## CI check
 

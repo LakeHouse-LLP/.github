@@ -1,6 +1,6 @@
 # Submitting to awesome lists
 
-Zero-cost discovery channel for **LakeHouse Studio** public **widget** repos. Prefer lists that match the audience (widgets, AEC, Revit, Rhino, design tools, TypeScript).
+Zero-cost discovery channel for **LakeHouse Studio** public repos (widgets **and** general OSS). Prefer lists that match the audience (widgets, AEC, Revit, Rhino, design tools, TypeScript, or the OSS project’s domain).
 
 ## Before you submit
 
