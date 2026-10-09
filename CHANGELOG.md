@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Renamed template references: `Template-OpenSource` → `Template-Widget` (retired name recorded). Public repos documented as standalone agent-friendly widgets ([docs/naming.md](docs/naming.md)).
+
 ### Added
 
 - Contributor growth: friendly `CONTRIBUTING.md` (Mac/Windows + Codespaces), `GOVERNANCE.md`, `ROADMAP.md`, starter-issue + listings guides, maintainer playbook, `good first issue` / `help wanted` labels, welcome workflow template, `.all-contributorsrc`, `.devcontainer/`.

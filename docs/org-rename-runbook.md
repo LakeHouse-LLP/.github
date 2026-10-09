@@ -9,7 +9,7 @@ The current login may appear in this runbook and other allowlisted files only. E
 ## Before
 
 1. **Freeze publishing** — pause npm/container publishes, Pages deploys, and release automation that embeds org URLs.
-2. **Inventory repositories** — list all repos under the current `orgName` (templates, open-source, `sandbox-*`, `legacy-*`, this defaults repo).
+2. **Inventory repositories** — list all repos under the current `orgName` (templates, public widgets, `sandbox-*`, `legacy-*`, this defaults repo).
 3. **Runners** — inventory self-hosted runners (private repos only). Note labels and which repos use them. Public repos must stay on GitHub-hosted runners.
 4. **Webhooks** — export webhook URLs/secrets per repo and org hooks.
 5. **GitHub Apps** — list installed Apps and their repo access; plan re-auth after rename.

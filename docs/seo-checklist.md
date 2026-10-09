@@ -1,6 +1,6 @@
 # SEO checklist (reusable)
 
-Use for Template-OpenSource products and the org docs site. Pair with [discoverability.md](discoverability.md) and [docs-site.md](docs-site.md).
+Use for `Template-Widget`, public widget repos, and the org docs site. Pair with [discoverability.md](discoverability.md) and [docs-site.md](docs-site.md).
 
 ## GitHub repo
 

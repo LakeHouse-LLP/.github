@@ -1,6 +1,6 @@
 # Launch checklist
 
-For public **LakeHouse Studio** / Template-OpenSource launches. Complete [seo-checklist.md](seo-checklist.md) first.
+For public **LakeHouse Studio** widget launches (`Template-Widget` and plain-named widget repos). Complete [seo-checklist.md](seo-checklist.md) first.
 
 ## Product readiness
 

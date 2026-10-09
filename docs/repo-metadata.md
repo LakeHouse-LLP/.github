@@ -1,6 +1,6 @@
 # Repository metadata standard
 
-Superseded in detail by **[discoverability.md](discoverability.md)** for Template-OpenSource and this `.github` repo. This page remains the short checklist for all durable repos.
+Superseded in detail by **[discoverability.md](discoverability.md)** for `Template-Widget`, public widget repos, and this `.github` repo. This page remains the short checklist for all durable repos. Naming: [naming.md](naming.md).
 
 ## Description
 
@@ -9,7 +9,7 @@ Superseded in detail by **[discoverability.md](discoverability.md)** for Templat
 
 ## Topics
 
-**8–20** lowercase topics. Pool includes: `lakehouse-studio`, `revit`, `rhino`, `grasshopper`, `bim`, `aec`, `architecture`, `indesign`, `design-tools`, plus stack tags. Prefer brand slugs over the GitHub org login.
+**8–20** lowercase topics. Pool includes: `lakehouse-studio`, `widget`, `widgets`, `design-tools`, `revit`, `rhino`, `grasshopper`, `bim`, `aec`, `architecture`, `indesign`, `agent-friendly`, plus stack tags. Prefer brand slugs over the GitHub org login.
 
 ## Homepage
 
