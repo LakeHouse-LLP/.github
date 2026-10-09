@@ -1,0 +1,32 @@
+name: Feature request
+description: Propose a new capability or improvement
+title: "[feat] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the user need. Large work is tracked in [SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo).
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should change?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: input
+    id: todo
+    attributes:
+      label: Linked SenZhang-Todo (optional)
+      description: Issue or todo id/URL if this is part of an epic

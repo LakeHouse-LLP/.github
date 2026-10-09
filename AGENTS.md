@@ -1,0 +1,65 @@
+# LakeHouse-LLP — agent & human house rules
+
+Org-wide defaults for LakeHouse-LLP. Epics live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo), not GitHub Issues. Sen is the sole owner who reviews and merges; there is no second owner and no auto-archive.
+
+`CLAUDE.md` imports this file — keep rules here.
+
+## Org decisions
+
+| Topic | Decision |
+| --- | --- |
+| Cost | **ZERO COST** — GitHub Free only (no Team, no paid Secret Protection) |
+| Public runners | GitHub-hosted only |
+| Private runners | Self-hosted only |
+| Public + self-hosted | **Never** |
+| Merge method | **Merge commits only** (never squash or rebase-merge) |
+| Epics | SenZhang-Plus/SenZhang-Todo |
+| Templates | `Template-Monorepo`, `Template-Sandbox`, `Template-OpenSource` |
+| Org defaults | This `.github` repository |
+| Disposable private | `sandbox-*`, `legacy-*` |
+| Open-source names | Plain names (not `Template-*` / `sandbox-*` / `legacy-*`) |
+| Retired names | See [retired-names.txt](retired-names.txt) — do not reuse |
+
+Settings only Sen changes in the GitHub UI: [docs/sen-only-github-settings.md](docs/sen-only-github-settings.md).
+
+## Stacked PRs
+
+- Prefer small stacked PRs; each branch is based on the previous feature branch.
+- List the full stack in every PR body (position, parent, children).
+- Merge **bottom-up** with **merge commits**, then retarget the next PR to `main`.
+- Recommended zero-cost tool: **`git rebase --update-refs`** (Git 2.38+). See [CONTRIBUTING.md](CONTRIBUTING.md).
+- CI: `on.pull_request` with **no `branches` filter**.
+- Rulesets that require PRs must **not** block stacked PRs into feature branches.
+- Exception: senzhang-todo-style ledger/data edits may go straight to `main`.
+
+## Changelog
+
+- Keep a Changelog with **Unreleased**.
+- pnpm repos: changesets under `.changeset/`.
+- Each PR touches CHANGELOG/changeset **or** has `skip-changelog`.
+
+## Never do
+
+Agents and contributors must **never**:
+
+1. **Change visibility** of any repository (public ↔ private).
+2. **Change org/repo settings, rulesets, or secrets** (Sen-only in the GitHub UI / approved channels).
+3. **Force-push** to any branch on `origin` (including “their” feature branches on shared remotes when policy forbids it — default: no force-push to org remotes).
+4. **Delete or rename** repositories, branches, or tags.
+5. **Merge** into `Template-*` or `.github` (Sen merges those).
+6. **Vendor** shared code (copy-paste org libraries into repos); consume shared packages or templates instead.
+7. **Push to an unexpected remote** (only the repo’s configured `origin` for LakeHouse-LLP / the intended fork; never add or push to unrelated remotes).
+
+## Allowed defaults for agents
+
+- Open **draft** PRs; leave merge to Sen for protected/template/org-default repos.
+- Use workflow templates under `workflow-templates/` with actions **pinned by SHA**, least-privilege `permissions:`, and the correct runner tier.
+- Sync labels via the reusable `label-sync` workflow; labels must exist in each target repo.
+- For public repos: DCO `Signed-off-by` on commits.
+- Prefer merge commits when merging is explicitly allowed by Sen.
+
+## Security & secrets
+
+- No secrets or client content in issues, PRs, logs, or artifacts.
+- Report vulnerabilities via GitHub **private vulnerability reporting** ([SECURITY.md](SECURITY.md)).
+- Do not enable or depend on paid GitHub Secret Protection; use free scanning (e.g. gitleaks CLI in CI) only.

@@ -1,0 +1,6 @@
+{
+  "name": "LakeHouse tier-guard",
+  "description": "Ensures public repos use GitHub-hosted runners and private repos use self-hosted runners.",
+  "iconName": "octicon server",
+  "categories": ["Continuous integration", "Utilities"]
+}

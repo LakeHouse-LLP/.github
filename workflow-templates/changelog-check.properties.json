@@ -1,0 +1,6 @@
+{
+  "name": "LakeHouse changelog-check",
+  "description": "Fails PRs that neither touch CHANGELOG.md/.changeset/ nor carry the skip-changelog label. No pull_request branches filter.",
+  "iconName": "octicon list-ordered",
+  "categories": ["Continuous integration"]
+}

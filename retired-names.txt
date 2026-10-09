@@ -1,0 +1,9 @@
+# Retired repository names for LakeHouse-LLP
+#
+# Format:
+#   - One name per line (exact GitHub repo name, no org prefix).
+#   - Lines starting with # are comments.
+#   - Optional trailing comment after the name: <name><spaces>#<note>
+#   - Do not create new repositories that reuse these names.
+#
+LakeHouse-Template  # renamed to Template-Monorepo

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & discussion
+    url: https://github.com/orgs/LakeHouse-LLP/discussions
+    about: Ask questions and discuss ideas in GitHub Discussions (not Issues).
+  - name: SenZhang-Todo (epics)
+    url: https://github.com/SenZhang-Plus/SenZhang-Todo
+    about: Tracked epics and todos live here, not in GitHub Issues.

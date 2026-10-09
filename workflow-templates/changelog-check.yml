@@ -1,0 +1,48 @@
+# Requires each PR to touch CHANGELOG.md / .changeset/ or carry skip-changelog.
+# No branches filter — stacked PRs into feature branches must run this check.
+
+name: changelog-check
+
+on:
+  pull_request:
+
+permissions: {}
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Check changelog or skip-changelog label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          labels="$(gh api "repos/${{ github.repository }}/issues/${PR_NUMBER}/labels" --jq '.[].name')"
+          if printf '%s\n' "$labels" | grep -qx 'skip-changelog'; then
+            echo "skip-changelog label present — OK"
+            exit 0
+          fi
+
+          changed="$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}")"
+          echo "Changed files:"
+          printf '%s\n' "$changed"
+
+          if printf '%s\n' "$changed" | grep -Eq '(^|/)CHANGELOG\.md$|(^|/)\.changeset/'; then
+            echo "CHANGELOG or changeset updated — OK"
+            exit 0
+          fi
+
+          echo "::error::PR must update CHANGELOG.md and/or .changeset/, or add the skip-changelog label."
+          exit 1

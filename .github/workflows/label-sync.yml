@@ -1,0 +1,82 @@
+# Reusable + manual label sync for LakeHouse-LLP.
+# Labels must exist in each target repo; call this workflow from that repo.
+#
+# Example (in another repo):
+#   jobs:
+#     labels:
+#       uses: LakeHouse-LLP/.github/.github/workflows/label-sync.yml@main
+#       permissions:
+#         contents: read
+#         issues: write
+
+name: label-sync
+
+on:
+  workflow_call:
+    inputs:
+      dry-run:
+        description: Preview label changes without applying
+        type: boolean
+        required: false
+        default: false
+      labels-ref:
+        description: Git ref of LakeHouse-LLP/.github to read labels.yml from
+        type: string
+        required: false
+        default: main
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Preview label changes without applying
+        type: boolean
+        required: false
+        default: false
+      labels-ref:
+        description: Git ref of LakeHouse-LLP/.github to read labels.yml from
+        type: string
+        required: false
+        default: main
+  push:
+    branches:
+      - main
+    paths:
+      - .github/labels.yml
+      - .github/workflows/label-sync.yml
+
+permissions: {}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout caller / this repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Resolve labels.yml
+        env:
+          LABELS_REF: ${{ inputs.labels-ref || 'main' }}
+        run: |
+          set -euo pipefail
+          mkdir -p .github
+          if [ "${{ github.repository }}" = "LakeHouse-LLP/.github" ] && [ -s .github/labels.yml ]; then
+            echo "Using labels.yml from checkout (canonical .github repo)"
+          else
+            url="https://raw.githubusercontent.com/LakeHouse-LLP/.github/${LABELS_REF}/.github/labels.yml"
+            echo "Downloading ${url}"
+            curl -fsSL "$url" -o .github/labels.yml
+          fi
+          if [ ! -s .github/labels.yml ]; then
+            echo "::error::labels.yml missing or empty"
+            exit 1
+          fi
+
+      - name: Sync labels
+        uses: crazy-max/ghaction-github-labeler@548a7c3603594ec17c819e1239f281a3b801ab4d # v6.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          yaml-file: .github/labels.yml
+          dry-run: ${{ inputs.dry-run == true || inputs.dry-run == 'true' }}
+          skip-delete: true

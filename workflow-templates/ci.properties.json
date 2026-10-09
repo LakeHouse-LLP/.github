@@ -1,0 +1,6 @@
+{
+  "name": "LakeHouse CI",
+  "description": "Starter CI on pull_request (no branches filter) and pushes to the default branch. GitHub-hosted runners for public repos. Actions pinned by SHA.",
+  "iconName": "octicon rocket",
+  "categories": ["Continuous integration"]
+}

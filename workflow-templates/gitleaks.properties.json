@@ -1,0 +1,6 @@
+{
+  "name": "LakeHouse gitleaks",
+  "description": "Zero-cost secret scan using the gitleaks CLI (SHA256-verified). No paid Secret Protection. GitHub-hosted for public repos.",
+  "iconName": "octicon shield-check",
+  "categories": ["Security", "Code scanning"]
+}
