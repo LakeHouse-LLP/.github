@@ -1,0 +1,52 @@
+# Fails when the current GitHub org login (see .lakehouse/org.json orgName) is
+# hardcoded outside the allowlist. Prefer org.json or github.repository_owner.
+# Fetch policy files from the defaults repo — do not vendor shared libraries.
+# Scripts are Node .mjs (cross-platform). pull_request has no branches filter.
+
+name: org-name-lint
+
+on:
+  pull_request:
+  push:
+    branches:
+      - $default-branch
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  org-name-lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        # pin: .lakehouse/pins.json → actions.checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node
+        # pin: .lakehouse/pins.json → actions.setup-node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Ensure lint script from defaults repo
+        env:
+          OWNER: ${{ github.repository_owner }}
+          DEFAULTS_REF: main
+        run: |
+          set -euo pipefail
+          mkdir -p .lakehouse scripts
+          base="https://raw.githubusercontent.com/${OWNER}/.github/${DEFAULTS_REF}"
+          if [ ! -f scripts/org-name-lint.mjs ]; then
+            curl -fsSL "${base}/scripts/org-name-lint.mjs" -o scripts/org-name-lint.mjs
+          fi
+          if [ ! -f .lakehouse/org-name-lint-allowlist.txt ]; then
+            curl -fsSL "${base}/.lakehouse/org-name-lint-allowlist.txt" -o .lakehouse/org-name-lint-allowlist.txt
+          fi
+          if [ ! -f .lakehouse/org.json ]; then
+            curl -fsSL "${base}/.lakehouse/org.json" -o .lakehouse/org.json
+          fi
+
+      - name: Run org-name lint
+        run: node scripts/org-name-lint.mjs

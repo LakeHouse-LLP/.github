@@ -1,6 +1,7 @@
-# Starter CI for LakeHouse-LLP public repos (GitHub-hosted runners).
+# Starter CI for public repos (GitHub-hosted runners).
 # For private repos, change runs-on to your self-hosted labels and keep tier-guard.
 # IMPORTANT: do not add a branches filter under pull_request — stacked PRs must get CI.
+# Pins: .lakehouse/pins.json — do not hardcode the GitHub org login.
 
 name: CI
 
@@ -20,9 +21,11 @@ jobs:
       contents: read
     steps:
       - name: Checkout
+        # pin: .lakehouse/pins.json → actions.checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Setup Node (optional — remove if unused)
+        # pin: .lakehouse/pins.json → actions.setup-node
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: "22"

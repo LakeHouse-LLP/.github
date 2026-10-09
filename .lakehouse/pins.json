@@ -1,0 +1,37 @@
+{
+  "description": "Single source of truth for reusable workflow paths and action pins (SHA). Update here first, then sync workflow files; CI verifies they match.",
+  "defaultsWorkflowRef": "main",
+  "reusableWorkflows": {
+    "labelSync": {
+      "repo": ".github",
+      "path": ".github/workflows/label-sync.yml",
+      "usesSuffix": ".github/.github/workflows/label-sync.yml@main",
+      "howToCall": "GitHub requires a literal uses: string. Build it as <orgName from org.json or github.repository_owner> + '/' + usesSuffix."
+    }
+  },
+  "actions": {
+    "checkout": {
+      "uses": "actions/checkout",
+      "version": "v7.0.1",
+      "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+    },
+    "setup-node": {
+      "uses": "actions/setup-node",
+      "version": "v7.1.0",
+      "sha": "949feb2413d6458794dcd2491c4babbbce0c15c1"
+    },
+    "labeler": {
+      "uses": "crazy-max/ghaction-github-labeler",
+      "version": "v6.0.0",
+      "sha": "548a7c3603594ec17c819e1239f281a3b801ab4d"
+    }
+  },
+  "tools": {
+    "gitleaks": {
+      "version": "8.30.1",
+      "sha256": {
+        "linux_x64": "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb"
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
-# Canonical labels for LakeHouse-LLP repos.
+# Canonical labels for repos in this organization.
 # Sync into each target repo via the reusable label-sync workflow
 # (labels must exist in each repo; org defaults do not create them automatically).
+# Owner/org login: prefer github.repository_owner / .lakehouse/org.json — do not hardcode.
 
 - name: bug
   color: "d73a4a"

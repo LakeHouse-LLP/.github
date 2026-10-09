@@ -1,0 +1,36 @@
+# CI for this defaults repo: org-name lint + pins check.
+# pull_request with no branches filter (stacked PRs).
+# Scripts are Node .mjs (cross-platform) — see AGENTS.md.
+
+name: org-defaults-ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        # pin: .lakehouse/pins.json → actions.checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node
+        # pin: .lakehouse/pins.json → actions.setup-node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Org name lint
+        run: node scripts/org-name-lint.mjs
+
+      - name: Pins check
+        run: node scripts/check-pins.mjs

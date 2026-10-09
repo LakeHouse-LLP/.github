@@ -1,5 +1,7 @@
 # Secret scan via gitleaks CLI (no paid GitHub Secret Protection; no gitleaks-action license).
 # Public repos: ubuntu-latest. Private repos: switch runs-on to self-hosted and use tier-guard.
+# Version/SHA256: .lakehouse/pins.json → tools.gitleaks
+
 
 name: gitleaks
 
@@ -19,12 +21,14 @@ jobs:
       contents: read
     steps:
       - name: Checkout
+        # pin: .lakehouse/pins.json → actions.checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
       - name: Install gitleaks
         env:
+          # pin: .lakehouse/pins.json → tools.gitleaks
           GITLEAKS_VERSION: "8.30.1"
           GITLEAKS_SHA256: "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb"
         run: |
