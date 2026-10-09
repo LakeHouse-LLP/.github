@@ -1,0 +1,6 @@
+{
+  "name": "LakeHouse release (private)",
+  "description": "Draft GitHub Release pipeline for private repos on self-hosted runners. Never use on public repos.",
+  "iconName": "octicon tag",
+  "categories": ["Continuous integration", "Publishing", "Automation"]
+}

@@ -7,6 +7,12 @@
       "path": ".github/workflows/label-sync.yml",
       "usesSuffix": ".github/.github/workflows/label-sync.yml@main",
       "howToCall": "GitHub requires a literal uses: string. Build it as <orgName from org.json or github.repository_owner> + '/' + usesSuffix."
+    },
+    "release": {
+      "repo": ".github",
+      "path": ".github/workflows/release.yml",
+      "usesSuffix": ".github/.github/workflows/release.yml@main",
+      "howToCall": "Pass runs-on-json: '[\"ubuntu-latest\"]' (public) or self-hosted labels (private). See docs/releasing.md."
     }
   },
   "actions": {
@@ -24,6 +30,21 @@
       "uses": "crazy-max/ghaction-github-labeler",
       "version": "v6.0.0",
       "sha": "548a7c3603594ec17c819e1239f281a3b801ab4d"
+    },
+    "attest-build-provenance": {
+      "uses": "actions/attest-build-provenance",
+      "version": "v4.2.2",
+      "sha": "4d101475d8b20a2381f78447822ac1eab6504dd8"
+    },
+    "gh-release": {
+      "uses": "softprops/action-gh-release",
+      "version": "v3.0.3",
+      "sha": "efb35369e0ad2afab669f228072c1b0d510eae64"
+    },
+    "changesets": {
+      "uses": "changesets/action",
+      "version": "v2.1.2",
+      "sha": "ae32849d5ba541f9ae29e40e22a623bc13562f51"
     }
   },
   "tools": {

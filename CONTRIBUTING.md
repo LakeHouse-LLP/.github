@@ -74,6 +74,10 @@ Ledger / data edits in the style of **senzhang-todo** may go **straight to `main
   - carry the `skip-changelog` label.
 - The `changelog-check` workflow template enforces this.
 
+## Releases
+
+See [docs/releasing.md](docs/releasing.md) and [docs/pre-release-checklist.md](docs/pre-release-checklist.md). Version via changesets; CI tags; draft GitHub Releases; Sen publishes.
+
 ## Org name lint
 
 PRs must not introduce hardcoded GitHub org login strings outside the allowlist (see `.lakehouse/org-name-lint-allowlist.txt`). Run locally:

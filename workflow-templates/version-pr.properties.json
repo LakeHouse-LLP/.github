@@ -1,0 +1,6 @@
+{
+  "name": "LakeHouse version PR (changesets)",
+  "description": "Opens a Version Packages PR from changesets. Tags and GitHub Releases stay on the release workflow; merge commits only.",
+  "iconName": "octicon versions",
+  "categories": ["Publishing", "Automation"]
+}

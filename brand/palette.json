@@ -1,0 +1,24 @@
+{
+  "brand": "LakeHouse",
+  "note": "Placeholder tokens — Sen may replace with final brand values.",
+  "colors": {
+    "ink": "#10241C",
+    "paper": "#F3F6F2",
+    "moss": "#2F6B4F",
+    "mist": "#A8C3B5",
+    "amber": "#C48A2A",
+    "danger": "#A33B2B"
+  },
+  "theme": {
+    "light": {
+      "background": "#F3F6F2",
+      "foreground": "#10241C",
+      "accent": "#2F6B4F"
+    },
+    "dark": {
+      "background": "#10241C",
+      "foreground": "#F3F6F2",
+      "accent": "#A8C3B5"
+    }
+  }
+}

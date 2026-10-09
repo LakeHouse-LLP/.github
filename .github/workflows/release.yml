@@ -1,0 +1,162 @@
+# Reusable release workflow (draft GitHub Release + checksums + attestation).
+# Callers must use a literal uses: string — see .lakehouse/pins.json.
+#
+# Example (public):
+#   jobs:
+#     release:
+#       uses: <orgName>/.github/.github/workflows/release.yml@main
+#       with:
+#         runs-on-json: '["ubuntu-latest"]'
+#         tag: ${{ github.ref_name }}
+#       permissions:
+#         contents: write
+#         id-token: write
+#         attestations: write
+#
+# Example (private):
+#       with:
+#         runs-on-json: '["self-hosted","linux"]'
+
+name: release
+
+on:
+  workflow_call:
+    inputs:
+      runs-on-json:
+        description: JSON array for runs-on (public ["ubuntu-latest"]; private self-hosted labels)
+        type: string
+        required: true
+      tag:
+        description: Release tag (vX.Y.Z or pkg@X.Y.Z)
+        type: string
+        required: true
+      draft:
+        description: Create GitHub Release as draft
+        type: boolean
+        required: false
+        default: true
+      artifact-path:
+        description: Glob of build artifacts to checksum and upload
+        type: string
+        required: false
+        default: dist/**
+      working-directory:
+        description: Build working directory
+        type: string
+        required: false
+        default: .
+      publish-npm:
+        description: Attempt npm publish via OIDC trusted publishing
+        type: boolean
+        required: false
+        default: false
+      build-command:
+        description: Shell command to build artifacts (empty = auto-detect Node)
+        type: string
+        required: false
+        default: ""
+
+permissions: {}
+
+jobs:
+  release:
+    runs-on: ${{ fromJSON(inputs.runs-on-json) }}
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - name: Checkout
+        # pin: .lakehouse/pins.json → actions.checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        # pin: .lakehouse/pins.json → actions.setup-node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          registry-url: https://registry.npmjs.org
+
+      - name: Build
+        env:
+          BUILD_COMMAND: ${{ inputs.build-command }}
+        run: |
+          set -euo pipefail
+          if [ -n "${BUILD_COMMAND}" ]; then
+            eval "${BUILD_COMMAND}"
+            exit 0
+          fi
+          if [ -f pnpm-lock.yaml ]; then
+            corepack enable
+            pnpm install --frozen-lockfile
+            pnpm run build
+          elif [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci
+            npm run build --if-present
+          elif [ -f package.json ]; then
+            npm install
+            npm run build --if-present
+          else
+            echo "No package.json — pass build-command input or customize this reusable workflow call."
+          fi
+
+      - name: SHA256 checksums
+        id: checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .release-assets
+          shopt -s nullglob globstar
+          files=(${{ inputs.artifact-path }})
+          count=0
+          : > .release-assets/SHA256SUMS
+          for f in "${files[@]}"; do
+            if [ -f "$f" ]; then
+              cp -a "$f" .release-assets/
+              (cd .release-assets && sha256sum "$(basename "$f")" >> SHA256SUMS)
+              count=$((count + 1))
+            fi
+          done
+          echo "asset_count=${count}" >> "$GITHUB_OUTPUT"
+          if [ "$count" -gt 0 ]; then
+            cat .release-assets/SHA256SUMS
+          else
+            echo "No artifacts matched ${{ inputs.artifact-path }}; release will be notes-only unless you customize artifact-path."
+            rm -f .release-assets/SHA256SUMS
+          fi
+
+      - name: Attest build provenance
+        if: ${{ steps.checksums.outputs.asset_count != '0' }}
+        # pin: .lakehouse/pins.json → actions.attest-build-provenance
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: .release-assets/*
+
+      - name: Draft GitHub Release
+        # pin: .lakehouse/pins.json → actions.gh-release
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
+        with:
+          tag_name: ${{ inputs.tag }}
+          name: ${{ inputs.tag }}
+          draft: ${{ inputs.draft }}
+          generate_release_notes: true
+          files: |
+            .release-assets/*
+
+      - name: Publish npm (OIDC trusted publishing)
+        if: ${{ inputs.publish-npm }}
+        run: |
+          set -euo pipefail
+          # Sen must configure npm trusted publishing (OIDC) for this repository.
+          # No long-lived npm tokens.
+          if [ -f pnpm-lock.yaml ]; then
+            corepack enable
+            pnpm publish -r --access public --no-git-checks
+          else
+            npm publish --access public --provenance
+          fi

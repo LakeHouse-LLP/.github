@@ -22,3 +22,11 @@
 - name: skip-changelog
   color: "c5def5"
   description: PR does not need a CHANGELOG or changeset entry
+
+- name: breaking-change
+  color: "b60205"
+  description: Breaking change — call out upgrade steps in release notes
+
+- name: chore
+  color: "fef2c0"
+  description: Chore — excluded from auto-generated release notes
