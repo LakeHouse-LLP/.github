@@ -1,0 +1,52 @@
+# Starter CI for LakeHouse-LLP public repos (GitHub-hosted runners).
+# For private repos, change runs-on to your self-hosted labels and keep tier-guard.
+# IMPORTANT: do not add a branches filter under pull_request — stacked PRs must get CI.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - $default-branch
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node (optional — remove if unused)
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Install & verify
+        run: |
+          set -euo pipefail
+          # Customize for the target repo. This starter only auto-detects common Node layouts.
+          if [ -f pnpm-lock.yaml ]; then
+            corepack enable
+            pnpm install --frozen-lockfile
+            pnpm test
+          elif [ -f yarn.lock ]; then
+            corepack enable
+            yarn install --immutable
+            yarn test
+          elif [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci
+            npm test --if-present
+            npm run lint --if-present
+          elif [ -f package.json ]; then
+            npm install
+            npm test --if-present
+            npm run lint --if-present
+          else
+            echo "No package.json — replace this step with language-specific build/test commands."
+          fi

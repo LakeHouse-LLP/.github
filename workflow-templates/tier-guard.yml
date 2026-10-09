@@ -1,0 +1,54 @@
+# Fails when runner tier does not match repo visibility.
+# Public → github-hosted only. Private → self-hosted only.
+# Keep pull_request without a branches filter so stacked PRs are checked.
+
+name: tier-guard
+
+on:
+  pull_request:
+  push:
+    branches:
+      - $default-branch
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  tier-guard:
+    # Public template default. Private repos must set runs-on to self-hosted labels.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Enforce runner tier
+        env:
+          REPO_PRIVATE: ${{ github.event.repository.private }}
+          RUNNER_ENVIRONMENT: ${{ runner.environment }}
+        run: |
+          set -euo pipefail
+          env_kind="${RUNNER_ENVIRONMENT}"
+          # Fallback when runner.environment is unavailable on older runners.
+          if [ -z "${env_kind}" ]; then
+            if [ -n "${ImageOS:-}" ]; then
+              env_kind="github-hosted"
+            else
+              env_kind="self-hosted"
+            fi
+          fi
+          echo "repository.private=${REPO_PRIVATE}"
+          echo "runner.environment=${RUNNER_ENVIRONMENT:-<empty>}"
+          echo "resolved.tier=${env_kind}"
+
+          if [ "${REPO_PRIVATE}" = "false" ] || [ "${REPO_PRIVATE}" = "False" ]; then
+            if [ "${env_kind}" = "self-hosted" ]; then
+              echo "::error::Public repos must use GitHub-hosted runners. Self-hosted runners are never used on public repos."
+              exit 1
+            fi
+            echo "OK: public repo on GitHub-hosted runner."
+          else
+            if [ "${env_kind}" = "github-hosted" ]; then
+              echo "::error::Private repos must use self-hosted runners (not GitHub-hosted)."
+              exit 1
+            fi
+            echo "OK: private repo on self-hosted runner."
+          fi
