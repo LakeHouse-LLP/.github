@@ -37,8 +37,10 @@ These org/repo controls are **owner-only**. Agents and contributors must not cha
 - Repository **visibility** changes.
 - Org/repo **secrets**, **variables**, and **rulesets** beyond what Free plan allows Sen to configure.
 - Creating/deleting org secrets for CI (prefer OIDC over secrets).
+- **Vercel** team Shared Environment Variables and project env vars ([deploy/vercel-env.md](deploy/vercel-env.md)) — agents must not mutate without explicit approval.
 - Approving merges into `Template-*` and `.github`.
 - Publishing draft GitHub Releases.
 - Uploading final **brand** assets into [`brand/`](../brand/).
+- **Owner’s vault** (Google Drive) for important credential values.
 
 See [AGENTS.md](../AGENTS.md) **Never do** list.

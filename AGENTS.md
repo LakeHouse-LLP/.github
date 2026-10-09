@@ -63,12 +63,20 @@ Agents and contributors must **never**:
 6. **Vendor** shared code (copy-paste org libraries into repos); consume shared packages (e.g. `@lakehouse/widget-sdk`) or templates instead.
 7. **Push to an unexpected remote** (only the repo’s configured `origin` for this org / the intended fork; never add or push to unrelated remotes).
 8. **Hardcode the GitHub org login** in workflows, badges, or docs (use `org.json` or `github.repository_owner`; allowlisted files only for historical/rename notes).
+9. **Create, edit, or delete Vercel environment variables** (UI, API, or `vercel env add` / `vercel env rm`) without Sen’s **explicit** in-band approval. Shared vs project rules: [docs/deploy/vercel-env.md](docs/deploy/vercel-env.md).
 
 ## Scripts
 
 - Repo scripts under `scripts/` are **cross-platform Node `.mjs`** (Sen develops on Mac and Windows).
 - Do **not** add bash `.sh` (or Python) scripts for house tooling — use `node scripts/….mjs`.
 - Examples: `node scripts/org-name-lint.mjs`, `node scripts/check-pins.mjs`, `node scripts/create-release-tag.mjs`.
+
+## Deploy / Vercel env
+
+- Canonical rules: [docs/deploy/vercel-env.md](docs/deploy/vercel-env.md).
+- Multi-project values → **team Shared Environment Variables** (linked); project-only values stay on the project.
+- Inventory (names only) + rotation: [docs/deploy/secrets-inventory.template.md](docs/deploy/secrets-inventory.template.md), [docs/deploy/secrets-rotation-checklist.md](docs/deploy/secrets-rotation-checklist.md).
+- Important credential values live in the **owner’s vault** — never in git.
 
 ## Releases
 
