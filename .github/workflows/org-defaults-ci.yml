@@ -34,3 +34,11 @@ jobs:
 
       - name: Pins check
         run: node scripts/check-pins.mjs
+
+      - name: Discoverability check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          # Sen: set repo description + 8–20 topics, then remove this override.
+          DISCOVERABILITY_REQUIRE_METADATA: "false"
+        run: node scripts/discoverability-check.mjs

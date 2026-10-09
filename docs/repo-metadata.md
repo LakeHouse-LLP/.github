@@ -1,41 +1,29 @@
 # Repository metadata standard
 
-Apply to every durable repo (skip empty squat orgs and throwaway sandboxes unless Sen says otherwise).
+Superseded in detail by **[discoverability.md](discoverability.md)** for Template-OpenSource and this `.github` repo. This page remains the short checklist for all durable repos.
 
 ## Description
 
-- One or two sentences; start with the product or template name (`brand` from `.lakehouse/org.json`).
+- One or two sentences; start with **LakeHouse Studio** or the product name.
 - No client names; no secrets; no “WIP” as the permanent description.
 
 ## Topics
 
-Use lowercase GitHub topics. Prefer a stable core set plus repo-specific tags:
-
-| Topic | When |
-| --- | --- |
-| `lakehouse` | All org product/template repos (brand, not org login) |
-| `revit` / `rhino` / `grasshopper` | When applicable |
-| `typescript` / `dotnet` / … | Primary stack |
-| `monorepo` | Template-Monorepo descendants |
-| `opensource` | Public OSS repos |
-
-Do not put the GitHub **org login** in topics if it would churn on rename; use the **brand** slug.
+**8–20** lowercase topics. Pool includes: `lakehouse-studio`, `revit`, `rhino`, `grasshopper`, `bim`, `aec`, `architecture`, `indesign`, `design-tools`, plus stack tags. Prefer brand slugs over the GitHub org login.
 
 ## Homepage
 
-- Set the repo **Website** field to a path on the custom **`domain`** from `.lakehouse/org.json` (never `*.github.io`).
-- Until `domain` is replaced with a real host, leave homepage empty or use the GitHub repo URL temporarily — **Sen decides**.
+- Custom **`domain`** from `.lakehouse/org.json` (never `*.github.io`).
 
 ## Social preview
 
-- Upload a **1280×640** image (see [`brand/`](../brand/) social-preview placeholders).
-- Prefer brand-consistent light or dark asset; no client/Ennead content.
+- **1280×640** dark [`brand/social-preview.png`](../brand/social-preview.png). Accent `#7DFFFF` only.
 
 ## README header
 
-1. Logo via `<picture>` with light/dark (`brand/` or repo `docs/media/`).
-2. Badge row: **CI**, **release**, **license**, and **Scorecard** (public repos).
-3. Badge and link URLs must be built from **`github.repository_owner`** / `org.json` — do not hardcode the org login. Template:
+1. Dark logo (`brand/logo.svg` or repo media) — **no light variant**.
+2. Keyword-rich **first paragraph** ([discoverability.md](discoverability.md)).
+3. Badge row: CI, release, license, Scorecard (public). URLs from `github.repository_owner` / `org.json`:
 
 ```markdown
 <!-- Substitute OWNER from github.repository_owner or org.json orgName; REPO is this repo name -->
@@ -47,12 +35,12 @@ Do not put the GitHub **org login** in topics if it would churn on rename; use t
 
 ## Sen-only UI checklist (metadata-related)
 
-See [sen-only-github-settings.md](sen-only-github-settings.md) for the full list. Metadata-adjacent items:
+See [sen-only-github-settings.md](sen-only-github-settings.md) and [search-and-analytics.md](search-and-analytics.md).
 
-- [ ] Repository description, topics, homepage
+- [ ] Repository description, topics (8–20), homepage
 - [ ] Social preview image
-- [ ] Discussions enabled (for release announcements)
-- [ ] Immutable releases enabled
-- [ ] Tag protection rulesets (no move/delete of release tags)
+- [ ] Discussions enabled
+- [ ] Immutable releases / tag protection
 - [ ] Private vulnerability reporting
-- [ ] Merge method = merge commit only
+- [ ] Merge commits only
+- [ ] Search Console + Bing + analytics

@@ -75,6 +75,12 @@ Agents and contributors must **never**:
 - Only CI creates release tags (`create-release-tag.mjs`). Never tag releases by hand.
 - npm via **OIDC trusted publishing** (no long-lived tokens). Immutable releases = Sen-only UI setting.
 
+## Brand & discoverability
+
+- Brand is **LakeHouse Studio**: dark mode only; single accent `#7DFFFF` ([`brand/`](brand/)).
+- Follow [docs/discoverability.md](docs/discoverability.md) for README/topics/pins/profile.
+- Docs site decision: [docs/docs-site.md](docs/docs-site.md) (Astro Starlight on custom domain).
+
 ## Allowed defaults for agents
 
 - Open **draft** PRs; leave merge to Sen for protected/template/org-default repos.
