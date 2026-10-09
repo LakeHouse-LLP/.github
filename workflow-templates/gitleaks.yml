@@ -1,12 +1,13 @@
 # Secret scan via gitleaks CLI (no paid GitHub Secret Protection; no gitleaks-action license).
 # Public repos: ubuntu-latest. Private repos: switch runs-on to self-hosted and use tier-guard.
 # Version/SHA256: .lakehouse/pins.json → tools.gitleaks
-
+# merge_group: required for public-repo merge queue checks (docs/merge-queue.md).
 
 name: gitleaks
 
 on:
   pull_request:
+  merge_group:
   push:
     branches:
       - $default-branch

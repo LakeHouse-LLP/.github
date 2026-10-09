@@ -1,11 +1,13 @@
 # Fails when runner tier does not match repo visibility.
 # Public → github-hosted only. Private → self-hosted only.
 # Keep pull_request without a branches filter so stacked PRs are checked.
+# merge_group: required for public-repo merge queue checks (docs/merge-queue.md).
 
 name: tier-guard
 
 on:
   pull_request:
+  merge_group:
   push:
     branches:
       - $default-branch

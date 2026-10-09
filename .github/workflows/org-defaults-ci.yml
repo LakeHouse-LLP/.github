@@ -1,11 +1,13 @@
 # CI for this defaults repo: org-name lint + pins check.
 # pull_request with no branches filter (stacked PRs).
+# merge_group: required so the public-repo merge queue gets status checks.
 # Scripts are Node .mjs (cross-platform) — see AGENTS.md.
 
 name: org-defaults-ci
 
 on:
   pull_request:
+  merge_group:
   push:
     branches:
       - main

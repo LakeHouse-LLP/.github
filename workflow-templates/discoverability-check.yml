@@ -1,11 +1,13 @@
 # README first paragraph + repo description/topics (8–20) via gh api.
 # Public repos: GitHub-hosted. See docs/discoverability.md.
 # pull_request with no branches filter — stacked PRs must run CI.
+# merge_group: required for public-repo merge queue checks (docs/merge-queue.md).
 
 name: discoverability-check
 
 on:
   pull_request:
+  merge_group:
   push:
     branches:
       - $default-branch
