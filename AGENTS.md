@@ -63,6 +63,12 @@ Agents and contributors must **never**:
 7. **Push to an unexpected remote** (only the repo’s configured `origin` for this org / the intended fork; never add or push to unrelated remotes).
 8. **Hardcode the GitHub org login** in workflows, badges, or docs (use `org.json` or `github.repository_owner`; allowlisted files only for historical/rename notes).
 
+## Scripts
+
+- Repo scripts under `scripts/` are **cross-platform Node `.mjs`** (Sen develops on Mac and Windows).
+- Do **not** add bash `.sh` (or Python) scripts for house tooling — use `node scripts/….mjs`.
+- Examples: `node scripts/org-name-lint.mjs`, `node scripts/check-pins.mjs`.
+
 ## Allowed defaults for agents
 
 - Open **draft** PRs; leave merge to Sen for protected/template/org-default repos.

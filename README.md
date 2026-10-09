@@ -27,7 +27,7 @@ Identity, package scope, and public domain live in `.lakehouse/org.json`. Action
 | [.github/labels.yml](.github/labels.yml) | Canonical labels |
 | [.github/workflows/](.github/workflows/) | label-sync (reusable) + org-defaults-ci |
 | [workflow-templates/](workflow-templates/) | Starter workflows |
-| [scripts/](scripts/) | org-name-lint, check-pins |
+| [scripts/](scripts/) | Node `.mjs` tools (org-name-lint, check-pins) |
 
 ## Quick policies
 

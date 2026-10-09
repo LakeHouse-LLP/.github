@@ -79,8 +79,8 @@ Ledger / data edits in the style of **senzhang-todo** may go **straight to `main
 PRs must not introduce hardcoded GitHub org login strings outside the allowlist (see `.lakehouse/org-name-lint-allowlist.txt`). Run locally:
 
 ```bash
-bash scripts/org-name-lint.sh
-bash scripts/check-pins.sh
+node scripts/org-name-lint.mjs
+node scripts/check-pins.mjs
 ```
 
 ## Pull requests

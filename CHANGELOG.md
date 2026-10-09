@@ -9,8 +9,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - `.lakehouse/org.json` as the source of truth for `orgName`, `brand`, `packageScope`, and `domain`.
-- `.lakehouse/pins.json` for action SHAs and reusable workflow paths; `scripts/check-pins.sh`.
-- Org-name lint (`scripts/org-name-lint.sh`) + `org-defaults-ci` workflow + `org-name-lint` workflow template.
+- `.lakehouse/pins.json` for action SHAs and reusable workflow paths; `scripts/check-pins.mjs`.
+- Org-name lint (`scripts/org-name-lint.mjs`) + `org-defaults-ci` workflow + `org-name-lint` workflow template.
+- House rule: repo scripts are cross-platform Node `.mjs` (not bash).
 - `docs/org-rename-runbook.md` (before / during / after, including squatting the old org name).
 
 ### Changed

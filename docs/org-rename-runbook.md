@@ -35,7 +35,7 @@ The current login may appear in this runbook and other allowlisted files only. E
 6. **Re-check GitHub Apps** — reinstall or repair App installations on the renamed org.
 7. **Re-check package scopes** — publishing continues under `packageScope`; fix any leftover org-login-scoped packages.
 8. **Update allowlisted docs** — `retired-names.txt`, this runbook’s “current example” notes if needed, and `CHANGELOG.md`.
-9. **Run lints** — `scripts/org-name-lint.sh` and `scripts/check-pins.sh` must pass. Callers of reusable workflows that required a literal `uses: <org>/...` string must be updated to the new login (see [`.lakehouse/pins.json`](../.lakehouse/pins.json)).
+9. **Run lints** — `node scripts/org-name-lint.mjs` and `node scripts/check-pins.mjs` must pass. Callers of reusable workflows that required a literal `uses: <org>/...` string must be updated to the new login (see [`.lakehouse/pins.json`](../.lakehouse/pins.json)).
 10. **Unfreeze publishing** once inventory checks pass.
 
 ## Notes
