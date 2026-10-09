@@ -1,22 +1,22 @@
-# Discoverability standard (org + Template-OpenSource)
+# Discoverability standard (org + Template-Widget)
 
 Zero-cost GitHub-side SEO for **LakeHouse Studio**. Brand tokens: dark-only, accent `#7DFFFF` ([`brand/`](../brand/)). Domain from [`.lakehouse/org.json`](../.lakehouse/org.json) — never `*.github.io`.
 
-Scope: this `.github` defaults repo and **Template-OpenSource** (and public OSS repos created from it).
+Scope: this `.github` defaults repo, **Template-Widget**, and **public widget** repos created from it (one standalone agent-friendly widget per repo). Naming: [naming.md](naming.md).
 
 ## Repository description
 
-- One or two sentences; lead with **LakeHouse Studio** or the product name.
-- Include what it is + who it is for (designers / small offices / AEC tooling as relevant).
+- One or two sentences; lead with **LakeHouse Studio** or the **widget** name.
+- Say it is a **widget** (loadable into the designer office) and who it is for (designers / small offices / agents).
 - No client names, no “WIP” as the permanent blurb.
 
 ## Topics (8–20)
 
-Use **8 to 20** relevant lowercase topics. Prefer brand + domain keywords over the GitHub org login (rename-safe).
+Use **8 to 20** relevant lowercase topics. Prefer brand + widget keywords over the GitHub org login (rename-safe).
 
 Suggested pool (pick what fits; do not stuff all of them):
 
-`lakehouse-studio`, `lakehouse`, `revit`, `rhino`, `grasshopper`, `bim`, `aec`, `architecture`, `indesign`, `design-tools`, `typescript`, `dotnet`, `opensource`, `monorepo`
+`lakehouse-studio`, `lakehouse`, `widget`, `widgets`, `design-tools`, `revit`, `rhino`, `grasshopper`, `bim`, `aec`, `architecture`, `indesign`, `typescript`, `agent-friendly`, `opensource`
 
 CI enforces the count via the discoverability check (see below).
 
@@ -24,14 +24,14 @@ CI enforces the count via the discoverability check (see below).
 
 The **first paragraph** after the title/logo must be keyword-rich and human:
 
-- Name the product (**LakeHouse Studio** or repo product name).
-- State the category (e.g. digital office / design tools / Revit–Rhino utilities).
+- Name the **widget** and **LakeHouse Studio**.
+- State that it is a standalone, forkable **widget** for the digital office / agents.
 - Name the audience (designers and small offices).
 - Avoid marketing fluff with no nouns searchers use.
 
 ## Social preview
 
-- Upload **1280×640** [`brand/social-preview.png`](../brand/social-preview.png) (or a product-specific dark variant).
+- Upload **1280×640** [`brand/social-preview.png`](../brand/social-preview.png) (or a widget-specific dark variant).
 - Dark canvas only; accent `#7DFFFF`; no client/Ennead content.
 
 ## Homepage URL
@@ -41,20 +41,20 @@ The **first paragraph** after the title/logo must be keyword-rich and human:
 
 ## Releases help ranking
 
-Ship **regular tagged releases** ([releasing.md](releasing.md)). Fresh releases improve GitHub search and social trust. Prefer small, frequent SemVer releases over rare megadumps.
+Ship **regular tagged releases** ([releasing.md](releasing.md)) with loadable widget bundles + `widget.json` when applicable. Fresh releases improve GitHub search and social trust.
 
 ## CITATION.cff
 
-Public research-adjacent or citable tools should include a root [`CITATION.cff`](../CITATION.cff) (see Template-OpenSource). Keep `title` / `alias` aligned with **LakeHouse Studio** branding.
+Citable widgets should include a root [`CITATION.cff`](../CITATION.cff) (see Template-Widget). Keep `title` / `alias` aligned with **LakeHouse Studio** branding.
 
 ## Pinned repositories
 
 Sen pins up to six org repos. Recommended order:
 
-1. Flagship **open-source product** repo(s) users should try first  
+1. Flagship **public widget** repo(s) users or agents should try first  
 2. **Docs site** repo or the repo that hosts the org docs entrypoint (when it exists)  
-3. `Template-OpenSource` (contribution / fork entry)  
-4. Optionally `Template-Monorepo` if advertising the stack  
+3. `Template-Widget` (fork / scaffold entry)  
+4. Optionally advertise the private host only if Sen wants that visibility (usually keep private)
 
 Do not pin `sandbox-*`, `legacy-*`, or empty squat leftovers. Revisit pins when a launch checklist item ships ([launch-checklist.md](launch-checklist.md)).
 
@@ -62,9 +62,9 @@ Do not pin `sandbox-*`, `legacy-*`, or empty squat leftovers. Revisit pins when 
 
 Source: [`profile/README.md`](../profile/README.md).
 
-- Lead with **LakeHouse Studio** positioning: all-in-one digital office for designers and small offices; warm lakeside home-office feel.
+- Lead with **LakeHouse Studio** as a modular digital office; public widgets + private host.
 - Link docs via custom `domain`, defaults repo, and SenZhang-Todo.
-- Keep it short; details live in product READMEs.
+- Keep it short; details live in widget READMEs.
 
 ## CI check
 

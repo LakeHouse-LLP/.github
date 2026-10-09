@@ -16,11 +16,11 @@ Epics live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/Sen
 | Public + self-hosted | **Never** |
 | Merge method | **Merge commits only** (never squash or rebase-merge) |
 | Epics | SenZhang-Plus/SenZhang-Todo |
-| Templates | `Template-Monorepo`, `Template-Sandbox`, `Template-OpenSource` |
+| Templates | `Template-Monorepo` (private host), `Template-Sandbox`, `Template-Widget` (public widget scaffold; was `Template-OpenSource`) |
 | Org defaults | This `.github` / `defaultsRepo` repository |
 | Disposable private | `sandbox-*`, `legacy-*` |
-| Open-source names | Plain names (not `Template-*` / `sandbox-*` / `legacy-*`) |
-| Package scope | Brand-based from `org.json` (`packageScope`) — **not** the org login |
+| Public widgets | Plain names — one standalone agent-friendly widget per repo ([docs/naming.md](docs/naming.md)) |
+| Package scope | Brand-based from `org.json` (`packageScope`) — **not** the org login; widgets use `@lakehouse/widget-sdk` |
 | Public links | Custom `domain` from `org.json` — **never** `*.github.io` |
 | Retired names | See [retired-names.txt](retired-names.txt) — do not reuse |
 | Org rename | [docs/org-rename-runbook.md](docs/org-rename-runbook.md) |
@@ -59,7 +59,7 @@ Agents and contributors must **never**:
 3. **Force-push** to any branch on `origin` (including “their” feature branches on shared remotes when policy forbids it — default: no force-push to org remotes).
 4. **Delete or rename** repositories, branches, or tags.
 5. **Merge** into `Template-*` or `.github` (Sen merges those).
-6. **Vendor** shared code (copy-paste org libraries into repos); consume shared packages or templates instead.
+6. **Vendor** shared code (copy-paste org libraries into repos); consume shared packages (e.g. `@lakehouse/widget-sdk`) or templates instead.
 7. **Push to an unexpected remote** (only the repo’s configured `origin` for this org / the intended fork; never add or push to unrelated remotes).
 8. **Hardcode the GitHub org login** in workflows, badges, or docs (use `org.json` or `github.repository_owner`; allowlisted files only for historical/rename notes).
 

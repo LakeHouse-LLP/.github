@@ -9,3 +9,4 @@
 #   - After an org rename, record the old org login here and squat it (see docs/org-rename-runbook.md).
 #
 LakeHouse-Template  # renamed to Template-Monorepo
+Template-OpenSource  # renamed to Template-Widget

@@ -11,7 +11,7 @@
 
 # .github
 
-**LakeHouse Studio** org-wide shared defaults — the GitHub backbone for an all-in-one digital office for designers and small offices (Revit, Rhino, Grasshopper, and day-to-day design tools), with a calm lakeside home-office feel. This repository holds community health files, release and SEO standards, brand placeholders, and reusable workflow templates for Template-OpenSource and related public repos.
+**LakeHouse Studio** org-wide shared defaults — the GitHub backbone for a modular digital office for designers and agents. Public repos are standalone, agent-friendly **widgets**; the private monorepo hosts them. This repository holds community health files, release and SEO standards, brand placeholders, and reusable workflow templates for `Template-Widget` and public widget repos.
 
 Sen reviews and merges. ZERO COST / GitHub Free. Do not merge without Sen.
 
@@ -24,6 +24,7 @@ Identity and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: 
 | [profile/README.md](profile/README.md) | Org profile README (LakeHouse Studio) |
 | [brand/](brand/) | Dark-only logo / social preview placeholders |
 | [CITATION.cff](CITATION.cff) | Citation metadata |
+| [docs/naming.md](docs/naming.md) | Templates, public widgets, retired names |
 | [docs/discoverability.md](docs/discoverability.md) | Descriptions, topics, pins, profile strategy |
 | [docs/docs-site.md](docs/docs-site.md) | Astro Starlight org docs decision |
 | [docs/seo-checklist.md](docs/seo-checklist.md) | Reusable SEO checklist |

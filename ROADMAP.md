@@ -1,11 +1,11 @@
 # Roadmap
 
-High-level direction for **LakeHouse Studio** — an all-in-one digital office for designers and small offices. Details and scheduling live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo). Community **Ideas** welcome in Discussions.
+High-level direction for **LakeHouse Studio** — a modular digital office for designers and agents, built from public widgets plus a private host. Details and scheduling live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo). Community **Ideas** welcome in Discussions.
 
 ## Near term
 
 - Solidify org defaults (community health, release, discoverability, contributor paths)
-- Grow Template-OpenSource with clear `good first issue` / `help wanted` seeds
+- Grow `Template-Widget` and public widget repos with clear `good first issue` / `help wanted` seeds
 - Stand up the Astro Starlight docs site on the custom domain ([docs/docs-site.md](docs/docs-site.md))
 - Ship regular SemVer releases so newcomers see momentum
 
