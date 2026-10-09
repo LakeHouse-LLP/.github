@@ -6,8 +6,8 @@
 
 Applies to: `.github`, `Template-Widget`, `Template-OpenSource`, and every public widget/OSS repo made from them.
 
-- Require the **merge queue** on `main` via a **repository ruleset** (or classic branch protection — prefer rulesets).
-- **Merge method: merge commit** only (house rule — never squash or rebase).
+- Require the **merge queue** on `main` via a **repository ruleset** (or classic branch protection - prefer rulesets).
+- **Merge method: merge commit** only (house rule - never squash or rebase).
 - Recommended small-org queue settings (why: few concurrent PRs; avoid huge batched deploys; keep CI load predictable):
 
 | Setting | Recommended | Why |
@@ -17,7 +17,7 @@ Applies to: `.github`, `Template-Widget`, `Template-OpenSource`, and every publi
 | Min group size | **1** | Do not block a lone ready PR |
 | Wait time | **5 minutes** | Short window to batch neighbors without long idle waits |
 | Only merge non-failing PRs | **Enabled** | Required checks must pass |
-| Status check timeout | **30–60 minutes** | Fits normal public GitHub-hosted CI |
+| Status check timeout | **30-60 minutes** | Fits normal public GitHub-hosted CI |
 
 Exact Sen UI clicks: [sen-only-github-settings.md](sen-only-github-settings.md#merge-queue-ruleset-public-repos).
 
@@ -25,7 +25,7 @@ Exact Sen UI clicks: [sen-only-github-settings.md](sen-only-github-settings.md#m
 
 Applies to: `Template-Monorepo`, `Template-Sandbox`, `sandbox-*`, `legacy-*`.
 
-- Merge queue **not available** without Enterprise Cloud — do not enable paid plans for this.
+- Merge queue **not available** without Enterprise Cloud - do not enable paid plans for this.
 - Manual **bottom-up** merges with **merge commits**.
 - Require **up-to-date branch** + **green CI** before merging (ruleset / branch protection).
 
@@ -35,7 +35,7 @@ Every **required** check workflow must trigger on:
 
 ```yaml
 on:
-  pull_request:   # no branches: filter — stacked PRs into feature branches still run
+  pull_request:   # no branches: filter - stacked PRs into feature branches still run
   merge_group:    # merge queue temporary branches
 ```
 
@@ -50,9 +50,9 @@ This repo’s `org-defaults-ci` and the CI-oriented `workflow-templates/*` inclu
 3. Merge **bottom-up**: when the base PR is ready, **Sen** enqueues it (merge commit via the queue).
 4. After it lands, **retarget** the next PR to `main`, wait for green CI, then **Sen** enqueues that one.
 
-Agents and contributors **never** enqueue or merge — Sen does ([AGENTS.md](../AGENTS.md)).
+Agents and contributors **never** enqueue or merge - Sen does ([AGENTS.md](../AGENTS.md)).
 
 ## Related
 
-- [CONTRIBUTING.md](../CONTRIBUTING.md) — stacked PR workflow  
-- Merge commits only — org merge-method settings (Sen-only)  
+- [CONTRIBUTING.md](../CONTRIBUTING.md) - stacked PR workflow  
+- Merge commits only - org merge-method settings (Sen-only)  

@@ -10,14 +10,14 @@ Important credentials: store values in the **owner’s vault** (Sen’s Google D
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `EXAMPLE_API_KEY` | shared | project-a, project-b | Production | Sen | owner’s vault | 90d | 2026-01-15 | Linked team shared var |
 | `EXAMPLE_PREVIEW_API_KEY` | shared | project-a, project-b | Preview, Development | Sen | owner’s vault | 90d | 2026-01-15 | Non-prod only |
-| `NEXT_PUBLIC_SITE_URL` | project | project-a | Production, Preview, Development | Sen | repo docs / Vercel | n/a (public) | — | Public URL; not a secret |
+| `NEXT_PUBLIC_SITE_URL` | project | project-a | Production, Preview, Development | Sen | repo docs / Vercel | n/a (public) | - | Public URL; not a secret |
 
 ## Rules
 
 1. One row per **name** (+ environment split if prod vs non-prod use different names).
 2. Scope **`shared`** when the value is a Vercel team Shared Environment Variable linked to multiple projects.
 3. Scope **`project`** only for project-specific values.
-4. Preview/Development rows must not reuse production secret **names** that hold prod material — use distinct non-prod names.
+4. Preview/Development rows must not reuse production secret **names** that hold prod material - use distinct non-prod names.
 5. If OIDC replaces a secret, mark the old name `retired` in Notes and set Last rotated when removed from Vercel.
 
 ## Pointers

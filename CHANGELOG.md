@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Brand kit **v0.3** under `brand/` (tokens, writing, final assets, Python build scripts); profile/README header + tagline; `scripts/copy-lint.mjs`; Sen-only avatar (`final/png/appicon-1024.png`) and social preview (`final/social-preview.png`) steps.
 - Merge queue canonical policy: [docs/merge-queue.md](docs/merge-queue.md); `merge_group` on required CI workflows/templates; Sen-only ruleset click-path; agents never enqueue/merge.
 - Vercel env canonical rules: [docs/deploy/vercel-env.md](docs/deploy/vercel-env.md), secrets inventory + rotation templates; AGENTS.md Never-do for mutating Vercel env without Sen approval.
 

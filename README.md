@@ -1,28 +1,23 @@
 <p align="center">
-  <img src="brand/logo.svg" alt="LakeHouse Studio logo (placeholder — Sen uploads final artwork)" width="360">
+  <img src="brand/final/readme-header.png" alt="LakeHouse Studio" width="640">
 </p>
 
-<p align="center">
-  <a href="docs/discoverability.md">Discoverability</a> ·
-  <a href="docs/releasing.md">Releasing</a> ·
-  <a href="docs/seo-checklist.md">SEO checklist</a> ·
-  <a href="brand/USAGE.md">Brand</a>
-</p>
+<p align="center"><em>A second home for your design practice.</em></p>
 
 # .github
 
-**LakeHouse Studio** org-wide shared defaults — the GitHub backbone for a modular digital office for designers and agents. Public work uses **Template-Widget** (LakeHouse-extensible widgets) or **Template-OpenSource** (general OSS, no widget concepts); the private monorepo is the host. This repository holds community health files, release and SEO standards, brand placeholders, and reusable workflows/docs both public templates inherit.
+**LakeHouse Studio** org-wide shared defaults for a modular digital office for designers and agents. Public work uses **Template-Widget** (LakeHouse-extensible widgets) or **Template-OpenSource** (general OSS, no widget concepts). The private monorepo is the host. This repository holds community health files, release and SEO standards, the brand kit, and reusable workflows both public templates inherit.
 
 Sen reviews and merges. ZERO COST / GitHub Free. Do not merge without Sen.
 
-Identity and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: [`.lakehouse/pins.json`](.lakehouse/pins.json). Brand: dark-only, accent `#7DFFFF` ([`brand/`](brand/)).
+Identity and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: [`.lakehouse/pins.json`](.lakehouse/pins.json). Brand kit v0.3: [`brand/`](brand/) (dark only, accent `#7DFFFF`, Geist / Geist Mono).
 
 ## Contents
 
 | Path | Purpose |
 | --- | --- |
-| [profile/README.md](profile/README.md) | Org profile README (LakeHouse Studio) |
-| [brand/](brand/) | Dark-only logo / social preview placeholders |
+| [profile/README.md](profile/README.md) | Org profile README (header + tagline) |
+| [brand/](brand/) | Brand kit v0.3 (tokens, writing, final assets) |
 | [CITATION.cff](CITATION.cff) | Citation metadata |
 | [docs/naming.md](docs/naming.md) | Four templates + which-template guide |
 | [docs/merge-queue.md](docs/merge-queue.md) | Public merge queue vs private manual merges |
@@ -35,10 +30,10 @@ Identity and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: 
 | [docs/search-and-analytics.md](docs/search-and-analytics.md) | Search Console, Bing, analytics (Sen) |
 | [docs/launch-checklist.md](docs/launch-checklist.md) | Launch channels checklist |
 | [docs/awesome-lists.md](docs/awesome-lists.md) | Awesome-list submission guide |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Friendly contributor guide + 5-minute setup |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contributor guide + writing rules |
 | [GOVERNANCE.md](GOVERNANCE.md) | Response times, stale policy, Discussions |
 | [ROADMAP.md](ROADMAP.md) | Direction for contributors |
-| [docs/starter-issues.md](docs/starter-issues.md) | Seed 3–5 good-first issues |
+| [docs/starter-issues.md](docs/starter-issues.md) | Seed 3-5 good-first issues |
 | [docs/contributor-listings.md](docs/contributor-listings.md) | up-for-grabs, goodfirstissue.dev, … |
 | [docs/maintainer-playbook.md](docs/maintainer-playbook.md) | Safe review of outside PRs |
 | [docs/releasing.md](docs/releasing.md) | Tags, changesets, notes, rollback |
@@ -47,18 +42,18 @@ Identity and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: 
 | [docs/media-convention.md](docs/media-convention.md) | `docs/media/` for templates |
 | [docs/sen-only-github-settings.md](docs/sen-only-github-settings.md) | UI settings only Sen changes |
 | [AGENTS.md](AGENTS.md) / [CLAUDE.md](CLAUDE.md) | House rules + Never do |
-| [workflow-templates/](workflow-templates/) | Starter workflows (welcome, discoverability, …) |
+| [workflow-templates/](workflow-templates/) | Starter workflows |
 | [scripts/](scripts/) | Node `.mjs` tools |
 | [`.devcontainer/`](.devcontainer/) | Codespaces / Dev Container |
 
 ## Quick policies
 
 - Public → GitHub-hosted runners; private → self-hosted; never self-hosted on public.
-- Merge commits only.
+- Merge commits only; public repos use the merge queue on `main`.
 - Epics: [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo).
-- Do not hardcode the GitHub org login — use `org.json` or `${{ github.repository_owner }}`.
-- Scripts are Node `.mjs` (not bash).
-- Dark mode only; single accent `#7DFFFF`.
+- Do not hardcode the GitHub org login. Use `org.json` or `${{ github.repository_owner }}`.
+- Scripts for repo automation are Node `.mjs` (not bash). Brand kit builders are Python (`brand/build_*.py`).
+- Dark mode only; single accent `#7DFFFF`. Writing: [brand/WRITING-STYLE.md](brand/WRITING-STYLE.md).
 
 ## Contributors
 

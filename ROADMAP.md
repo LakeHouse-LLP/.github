@@ -1,6 +1,6 @@
 # Roadmap
 
-High-level direction for **LakeHouse Studio** — a modular digital office for designers and agents, built from public widgets plus a private host. Details and scheduling live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo). Community **Ideas** welcome in Discussions.
+High-level direction for **LakeHouse Studio** - a modular digital office for designers and agents, built from public widgets plus a private host. Details and scheduling live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo). Community **Ideas** welcome in Discussions.
 
 ## Near term
 
@@ -26,4 +26,4 @@ High-level direction for **LakeHouse Studio** — a modular digital office for d
 - Self-hosted runners on public repos
 - Auto-archive or second-owner requirements
 
-Propose changes via Discussions **Ideas** or a small issue — thank you.
+Propose changes via Discussions **Ideas** or a small issue - thank you.

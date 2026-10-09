@@ -7,7 +7,7 @@ Domain: value of `domain` in [`.lakehouse/org.json`](../.lakehouse/org.json) (re
 ## Google Search Console
 
 1. Add a **Domain** property (or URL-prefix `https://<domain>/`).
-2. Verify via DNS (TXT) at your DNS host — preferred over HTML file upload.
+2. Verify via DNS (TXT) at your DNS host - preferred over HTML file upload.
 3. Submit `https://<domain>/sitemap.xml` once the Astro Starlight site is live.
 4. Monitor Coverage / Experience; fix canonical and 404 issues before launches.
 
@@ -27,7 +27,7 @@ Domain: value of `domain` in [`.lakehouse/org.json`](../.lakehouse/org.json) (re
 | **Cloudflare Web Analytics** | Free, privacy-friendly, **no cookies**, tiny beacon; fits custom-domain DNS on Cloudflare | Needs a Cloudflare account |
 | GoatCounter | Free tier, privacy-friendly, very simple | Extra host/account if DNS is already on Cloudflare |
 
-**Justification:** LakeHouse Studio’s public docs will use a custom domain; Cloudflare Web Analytics avoids cookie banners and paid product analytics while staying ZERO COST. If the domain is **not** on Cloudflare, Sen may use **GoatCounter** instead — same privacy bar, still free.
+**Justification:** LakeHouse Studio’s public docs will use a custom domain; Cloudflare Web Analytics avoids cookie banners and paid product analytics while staying ZERO COST. If the domain is **not** on Cloudflare, Sen may use **GoatCounter** instead - same privacy bar, still free.
 
 ### Sen setup steps (Cloudflare Web Analytics)
 

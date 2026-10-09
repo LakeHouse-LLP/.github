@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: If you use LakeHouse Studio org defaults or cite this repository, please use this metadata.
-title: "LakeHouse Studio — org shared defaults"
+title: "LakeHouse Studio org shared defaults"
 abstract: >-
-  Organization-wide shared defaults for LakeHouse Studio: an all-in-one digital
+  Organization-wide shared defaults for LakeHouse Studio, a modular digital
   office for designers and small offices. Includes community health files,
   release and discoverability standards, and workflow templates.
 authors:

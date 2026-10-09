@@ -1,11 +1,11 @@
-# Maintainer playbook — reviewing outside PRs safely
+# Maintainer playbook - reviewing outside PRs safely
 
 For Sen (and any future maintainers) reviewing community PRs on **public** LakeHouse Studio repos. ZERO COST; never weaken runner or secrets rules to go faster.
 
 ## Hard rules
 
-1. **Never run fork code on self-hosted runners.** Public repos use **GitHub-hosted** runners only. Self-hosted is for private repos — and even then, do not process untrusted PR code from the internet on those machines.
-2. **Require approval for first-time contributors’ workflows** — Sen enables “require approval for all outside collaborators” / first-time contributors in Actions settings ([sen-only-github-settings.md](sen-only-github-settings.md)). Do not auto-run new workflows from unknown authors.
+1. **Never run fork code on self-hosted runners.** Public repos use **GitHub-hosted** runners only. Self-hosted is for private repos - and even then, do not process untrusted PR code from the internet on those machines.
+2. **Require approval for first-time contributors’ workflows** - Sen enables “require approval for all outside collaborators” / first-time contributors in Actions settings ([sen-only-github-settings.md](sen-only-github-settings.md)). Do not auto-run new workflows from unknown authors.
 3. **Never use `pull_request_target` together with a checkout of PR (fork) code.** That combination can exfiltrate secrets. Prefer `pull_request` for CI. The **welcome** template may use `pull_request_target` **only** for comment-only actions (no `actions/checkout` of the PR head).
 4. **Limit secrets.** Prefer OIDC (e.g. npm trusted publishing). No long-lived tokens in public workflows. Fork PR CI must not receive org secrets.
 5. **Do not ask contributors to paste secrets** into issues or logs.

@@ -33,21 +33,21 @@ Do this on each **public** repo (`.github`, `Template-Widget`, `Template-OpenSou
 1. Repo → **Settings** → **Rules** → **Rulesets** → **New branch ruleset** (or org-level ruleset targeting public repos if you use one).
 2. **Ruleset name:** e.g. `main-merge-queue`.
 3. **Enforcement status:** Active.
-4. **Bypass list:** only Sen (or empty — Sen uses admin bypass only when necessary).
-5. **Target branches:** Include default branch **`main`** (exact name — merge queue must not use `*` wildcards on classic protection; keep the target exact).
+4. **Bypass list:** only Sen (or empty - Sen uses admin bypass only when necessary).
+5. **Target branches:** Include default branch **`main`** (exact name - merge queue must not use `*` wildcards on classic protection; keep the target exact).
 6. Under **Branch rules**, enable at least:
-   - **Restrict deletions**
-   - **Require a pull request before merging** (do **not** apply this rule in a way that blocks PRs whose base is a **feature branch** for stacks — target **`main` only**)
-   - **Require status checks to pass** → add the required check job names (e.g. `lint`, `ci`, `gitleaks`, …) that your workflows report
-   - **Require merge queue**
+ - **Restrict deletions**
+ - **Require a pull request before merging** (do **not** apply this rule in a way that blocks PRs whose base is a **feature branch** for stacks - target **`main` only**)
+ - **Require status checks to pass** → add the required check job names (e.g. `lint`, `ci`, `gitleaks`, …) that your workflows report
+ - **Require merge queue**
 7. Open **Require merge queue** / merge queue configuration and set:
-   - **Merge method:** **Merge commit** (not squash / rebase)
-   - **Build concurrency:** `3`
-   - **Maximum pull requests to merge** (max group): `5`
-   - **Minimum pull requests to merge:** `1`
-   - **Wait time:** `5` minutes
-   - **Only merge non-failing pull requests:** enabled
-   - **Status check timeout:** `60` minutes (or `30` if CI is consistently fast)
+ - **Merge method:** **Merge commit** (not squash / rebase)
+ - **Build concurrency:** `3`
+ - **Maximum pull requests to merge** (max group): `5`
+ - **Minimum pull requests to merge:** `1`
+ - **Wait time:** `5` minutes
+ - **Only merge non-failing pull requests:** enabled
+ - **Status check timeout:** `60` minutes (or `30` if CI is consistently fast)
 8. **Save changes**.
 9. Confirm required workflows include `on.merge_group` ([merge-queue.md](merge-queue.md)).
 
@@ -58,10 +58,18 @@ Do this on each **public** repo (`.github`, `Template-Widget`, `Template-OpenSou
 3. Merge method: **merge commit** only.
 4. Sen merges manually (bottom-up for stacks).
 
+## Brand assets (GitHub UI)
+
+1. **Org avatar:** Organization → **Settings** → **Profile** → upload [`brand/final/png/appicon-1024.png`](../brand/final/png/appicon-1024.png) (square L1 app icon).
+2. **Per-repo social preview:** each public repo → **Settings** → **General** → **Social preview** → upload [`brand/final/social-preview.png`](../brand/final/social-preview.png) (1280×640).
+
+Favicon guidance for sites/apps: [`brand/README.md`](../brand/README.md).
+
 ## Per repository (Sen checklist)
 
-- [ ] Description, **8–20 topics**, homepage (custom `domain` — see [discoverability.md](discoverability.md))
-- [ ] Social preview (1280×640 dark [`brand/social-preview.png`](../brand/social-preview.png))
+- [ ] Description, **8-20 topics**, homepage (custom `domain` - see [discoverability.md](discoverability.md))
+- [ ] Social preview uploaded (`brand/final/social-preview.png`)
+- [ ] Org avatar uploaded once (`brand/final/png/appicon-1024.png`)
 - [ ] Discussions on + categories (Ideas, Q&A, Show and tell)
 - [ ] First-time contributor workflow **approval** required
 - [ ] Immutable releases on
@@ -74,14 +82,14 @@ Do this on each **public** repo (`.github`, `Template-Widget`, `Template-OpenSou
 - [ ] Signing keys for annotated/signed tags (optional but preferred)
 - [ ] Google Search Console + Bing Webmaster + Cloudflare Web Analytics ([search-and-analytics.md](search-and-analytics.md))
 - [ ] After metadata is set on this `.github` repo: remove `DISCOVERABILITY_REQUIRE_METADATA: "false"` from `org-defaults-ci`
-- [ ] Seed **3–5** `good first issue` / `help wanted` issues ([starter-issues.md](starter-issues.md))
+- [ ] Seed **3-5** `good first issue` / `help wanted` issues ([starter-issues.md](starter-issues.md))
 
 ## Also Sen-only (related)
 
 - Repository **visibility** changes.
 - Org/repo **secrets**, **variables**, and **rulesets** beyond what Free plan allows Sen to configure.
 - Creating/deleting org secrets for CI (prefer OIDC over secrets).
-- **Vercel** team Shared Environment Variables and project env vars ([deploy/vercel-env.md](deploy/vercel-env.md)) — agents must not mutate without explicit approval.
+- **Vercel** team Shared Environment Variables and project env vars ([deploy/vercel-env.md](deploy/vercel-env.md)) - agents must not mutate without explicit approval.
 - Approving merges / **merge-queue enqueues** into `Template-*` and `.github`.
 - Publishing draft GitHub Releases.
 - Uploading final **brand** assets into [`brand/`](../brand/).

@@ -1,6 +1,6 @@
 # Paths (repo-relative, one per line) allowed to contain hardcoded org login
 # strings (current orgName and its lowercase form). Globs supported (*, **).
-# Keep this list short — prefer org.json + github.repository_owner elsewhere.
+# Keep this list short. Prefer org.json + github.repository_owner elsewhere.
 
 .lakehouse/org.json
 .lakehouse/org-name-lint-allowlist.txt
@@ -8,3 +8,4 @@ retired-names.txt
 CHANGELOG.md
 **/CHANGELOG.md
 docs/org-rename-runbook.md
+brand/**

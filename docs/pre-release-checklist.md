@@ -29,4 +29,4 @@ Complete before Sen publishes a draft GitHub Release. Copy into the release PR o
 - [ ] CI green on the version PR and on the release tag workflow
 - [ ] Release created as **draft**; assets + notes reviewed
 - [ ] Announcement ready (GitHub **Discussions** post)
-- [ ] Sen publishes the release (immutable releases enabled — no later asset overwrite)
+- [ ] Sen publishes the release (immutable releases enabled - no later asset overwrite)

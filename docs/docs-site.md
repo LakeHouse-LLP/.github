@@ -23,18 +23,18 @@ Per-repo `docs/` can remain source content; the org site **pulls or mirrors** th
 
 ### Hosting (zero cost)
 
-Prefer **GitHub Pages** (project or org site) **or Vercel free**, with the **custom domain** from `org.json`. Never publish public docs as `*.github.io` links in READMEs — always the custom domain once DNS exists.
+Prefer **GitHub Pages** (project or org site) **or Vercel free**, with the **custom domain** from `org.json`. Never publish public docs as `*.github.io` links in READMEs - always the custom domain once DNS exists.
 
 ## Required on the docs site
 
 - `sitemap.xml` and `robots.txt`
 - **Canonical** URLs on the custom domain
-- Open Graph + Twitter/X cards (use `brand/social-preview.png` or page-specific 1280×640)
+- Open Graph + Twitter/X cards (use `brand/final/social-preview.png` or page-specific 1280×640)
 - **JSON-LD**: `Organization` (LakeHouse Studio) + `SoftwareApplication` per product
 - Meta descriptions on every page
 - Fast, accessible pages; optional **Lighthouse CI** budget only if the action remains free of charge
-- **Dark-mode-only** theme; accent `#7DFFFF` from [`brand/palette.json`](../brand/palette.json)
+- **Dark-mode-only** theme; accent `#7DFFFF` from [`brand/tokens.json`](../brand/tokens.json)
 
 ## Implementation note
 
-The docs site may live in a dedicated public repo (plain name) or inside Template-Monorepo’s Astro package — **Sen chooses** the repo name when DNS is ready. Until `domain` is set, keep content in-repo under `docs/` and do not advertise github.io URLs.
+The docs site may live in a dedicated public repo (plain name) or inside Template-Monorepo’s Astro package - **Sen chooses** the repo name when DNS is ready. Until `domain` is set, keep content in-repo under `docs/` and do not advertise github.io URLs.
