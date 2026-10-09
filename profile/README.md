@@ -1,6 +1,10 @@
-# LakeHouse Studio
+<p align="center">
+  <img src="../brand/final/readme-header.png" alt="LakeHouse Studio" width="640">
+</p>
 
-**An all-in-one digital office for designers and small offices** — the calm of a warm lakeside home office, without the tool sprawl.
+<p align="center"><em>A second home for your design practice.</em></p>
+
+# LakeHouse Studio
 
 LakeHouse Studio is a modular home-office service for designers and agents. Public work splits two ways: **LakeHouse widgets** (load into the desktop/web host) and **general open-source** products (no widget contract). Shared org defaults live here in `.github`.
 
@@ -10,10 +14,10 @@ LakeHouse Studio is a modular home-office service for designers and agents. Publ
 | --- | --- |
 | LakeHouse widgets (public) | Plain-named widget repos + scaffold **`Template-Widget`** |
 | General open-source (public) | Plain-named product repos + scaffold **`Template-OpenSource`** |
-| Product host (private) | **`Template-Monorepo`** — host, widget-sdk, catalog |
+| Product host (private) | **`Template-Monorepo`** (host, widget-sdk, catalog) |
 | Sandbox starter (private) | **`Template-Sandbox`** |
-| Org defaults (this profile’s source) | `.github` |
-| Docs (custom domain) | See `domain` in [`.lakehouse/org.json`](../.lakehouse/org.json) — never `*.github.io` |
+| Org defaults (this profile's source) | `.github` |
+| Docs (custom domain) | See `domain` in [`.lakehouse/org.json`](../.lakehouse/org.json). Never `*.github.io`. |
 | Epics / todos | [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo) |
 
 **Which template?** See [docs/naming.md](../docs/naming.md#which-template-should-i-use).

@@ -1,7 +1,7 @@
 # CI for this defaults repo: org-name lint + pins check.
 # pull_request with no branches filter (stacked PRs).
 # merge_group: required so the public-repo merge queue gets status checks.
-# Scripts are Node .mjs (cross-platform) — see AGENTS.md.
+# Scripts are Node .mjs (cross-platform). See AGENTS.md.
 
 name: org-defaults-ci
 
@@ -41,6 +41,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
-          # Sen: set repo description + 8–20 topics, then remove this override.
+          # Sen: set repo description + 8-20 topics, then remove this override.
           DISCOVERABILITY_REQUIRE_METADATA: "false"
         run: node scripts/discoverability-check.mjs
+
+      - name: Copy lint
+        run: node scripts/copy-lint.mjs

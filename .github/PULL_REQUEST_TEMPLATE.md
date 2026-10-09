@@ -38,7 +38,7 @@ Merge **bottom-up** with a **merge commit**, then retarget the next PR to `main`
 
 ## Checklist
 
-- [ ] CI is green on this PR (`pull_request` with no branches filter — stacks into feature branches must still run CI)
+- [ ] CI is green on this PR (`pull_request` with no branches filter - stacks into feature branches must still run CI)
 - [ ] `CHANGELOG.md` / `.changeset/` updated, **or** this PR has the `skip-changelog` label
 - [ ] No secrets, credentials, or client content in the diff or discussion
 - [ ] Docs / README updated when behavior or process changed

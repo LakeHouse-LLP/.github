@@ -23,8 +23,8 @@ Use **`<pkg>@X.Y.Z`** (not `<service>/vX.Y.Z`).
 ### Tag rules
 
 - Tags are **annotated** (`git tag -a`).
-- **Signed** where keys are available (SSH or GPG signing — Sen configures).
-- **Protected** against force-moves and deletes (rulesets — Sen-only UI).
+- **Signed** where keys are available (SSH or GPG signing - Sen configures).
+- **Protected** against force-moves and deletes (rulesets - Sen-only UI).
 - **Only CI creates release tags**, never humans from a laptop. Local `git tag` for releases is forbidden.
 
 ## Changelog and changesets
@@ -37,21 +37,21 @@ Use **`<pkg>@X.Y.Z`** (not `<service>/vX.Y.Z`).
 
 ## Release notes
 
-- Config: [`.github/release.yml`](../.github/release.yml) — auto-generated notes grouped by labels; excludes bots and chores.
-- Body template: [`.github/release-notes-template.md`](../.github/release-notes-template.md) — highlights, breaking/upgrade steps, changelog link, checksums/attestation, supported Revit / Rhino / OS where relevant.
+- Config: [`.github/release.yml`](../.github/release.yml) - auto-generated notes grouped by labels; excludes bots and chores.
+- Body template: [`.github/release-notes-template.md`](../.github/release-notes-template.md) - highlights, breaking/upgrade steps, changelog link, checksums/attestation, supported Revit / Rhino / OS where relevant.
 
 ## Release workflow
 
 High-level pipeline (see workflow templates `release-public` / `release-private` / `version-pr` and reusable `.github/workflows/release.yml`):
 
-1. **Version PR** — changesets (or equivalent) bumps versions and CHANGELOG; merge with a **merge commit** (`workflow-templates/version-pr.yml`).
-2. **Tag** — CI creates the annotated SemVer tag with `node scripts/create-release-tag.mjs [--name <pkg>] --push` (never by hand).
-3. **Build** — produce artifacts on the correct runner tier.
-4. **Checksums** — SHA256 for each uploaded asset.
-5. **Attestation** — `actions/attest-build-provenance` (pinned in `pins.json`).
-6. **Upload** — attach assets to a **draft** GitHub Release.
-7. **Publish packages** — **npm OIDC trusted publishing** (provenance; **no long-lived npm tokens**). Sen configures the trusted publisher on the npm side.
-8. **Publish release** — Sen turns the draft into a published release after checklist + approval.
+1. **Version PR** - changesets (or equivalent) bumps versions and CHANGELOG; merge with a **merge commit** (`workflow-templates/version-pr.yml`).
+2. **Tag** - CI creates the annotated SemVer tag with `node scripts/create-release-tag.mjs [--name <pkg>] --push` (never by hand).
+3. **Build** - produce artifacts on the correct runner tier.
+4. **Checksums** - SHA256 for each uploaded asset.
+5. **Attestation** - `actions/attest-build-provenance` (pinned in `pins.json`).
+6. **Upload** - attach assets to a **draft** GitHub Release.
+7. **Publish packages** - **npm OIDC trusted publishing** (provenance; **no long-lived npm tokens**). Sen configures the trusted publisher on the npm side.
+8. **Publish release** - Sen turns the draft into a published release after checklist + approval.
 
 ### Runner tiers
 
@@ -70,7 +70,7 @@ Turn on **immutable releases** in the GitHub UI (Sen-only). After publish, relea
 
 1. **Do not delete tags** if immutable releases / tag protection forbid it (preferred).
 2. **Yank npm**: `npm unpublish <pkg>@<version>` only within npm’s yank window, or deprecate: `npm deprecate <pkg>@<version> "message"`. Prefer **deprecate** + publish a fixed version.
-3. **GitHub Release**: mark the release as **unpublished** / draft only if policy allows; otherwise edit the release body with a **YANKED** banner linking to the replacement version. With immutable releases, do not replace assets — publish a new patch.
+3. **GitHub Release**: mark the release as **unpublished** / draft only if policy allows; otherwise edit the release body with a **YANKED** banner linking to the replacement version. With immutable releases, do not replace assets - publish a new patch.
 4. **Announce** in Discussions (and security advisory if needed).
 5. Record the yank in CHANGELOG under **Removed** or **Fixed** as appropriate.
 

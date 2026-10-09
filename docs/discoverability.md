@@ -1,21 +1,21 @@
 # Discoverability standard (org + public templates)
 
-Zero-cost GitHub-side SEO for **LakeHouse Studio**. Brand tokens: dark-only, accent `#7DFFFF` ([`brand/`](../brand/)). Domain from [`.lakehouse/org.json`](../.lakehouse/org.json) — never `*.github.io`.
+Zero-cost GitHub-side SEO for **LakeHouse Studio**. Brand tokens: dark-only, accent `#7DFFFF` ([`brand/`](../brand/)). Domain from [`.lakehouse/org.json`](../.lakehouse/org.json) - never `*.github.io`.
 
 Scope: this `.github` defaults repo, **Template-Widget**, **Template-OpenSource**, and public repos created from either. Naming / chooser: [naming.md](naming.md).
 
 | Public kind | Template | SEO angle |
 | --- | --- | --- |
 | LakeHouse **widget** | Template-Widget | Loadable widget for the LakeHouse host; agent-friendly |
-| General **open-source** | Template-OpenSource | Normal OSS product — **no** widget/`widget.json` wording |
+| General **open-source** | Template-OpenSource | Normal OSS product - **no** widget/`widget.json` wording |
 
 ## Repository description
 
 - One or two sentences; lead with **LakeHouse Studio** or the product/widget name.
-- Widgets: say it is a **widget** for the LakeHouse office. OSS: say what the tool is — do not mention widgets or the host.
+- Widgets: say it is a **widget** for the LakeHouse office. OSS: say what the tool is - do not mention widgets or the host.
 - No client names, no “WIP” as the permanent blurb.
 
-## Topics (8–20)
+## Topics (8-20)
 
 Use **8 to 20** relevant lowercase topics. Prefer brand + domain keywords over the GitHub org login (rename-safe).
 
@@ -36,13 +36,13 @@ Keyword-rich and human:
 
 ## Social preview
 
-- Upload **1280×640** [`brand/social-preview.png`](../brand/social-preview.png) (or a product-specific dark variant).
-- Dark canvas only; accent `#7DFFFF`; no client/Ennead content.
+- Upload **1280×640** [`brand/final/social-preview.png`](../brand/final/social-preview.png) (or a product-specific dark variant from the kit).
+- Dark graphite canvas only; accent `#7DFFFF`; no client/Ennead content.
 
 ## Homepage URL
 
 - Set the repo **Website** field to a path on `domain` from `org.json`.
-- Until the placeholder is replaced, Sen may leave it empty — never use `*.github.io`.
+- Until the placeholder is replaced, Sen may leave it empty - never use `*.github.io`.
 
 ## Releases help ranking
 

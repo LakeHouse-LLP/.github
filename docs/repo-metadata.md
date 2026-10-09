@@ -9,7 +9,7 @@ Superseded in detail by **[discoverability.md](discoverability.md)** for `Templa
 
 ## Topics
 
-**8–20** lowercase topics. Pool includes: `lakehouse-studio`, `widget`, `widgets`, `design-tools`, `revit`, `rhino`, `grasshopper`, `bim`, `aec`, `architecture`, `indesign`, `agent-friendly`, plus stack tags. Prefer brand slugs over the GitHub org login.
+**8-20** lowercase topics. Pool includes: `lakehouse-studio`, `widget`, `widgets`, `design-tools`, `revit`, `rhino`, `grasshopper`, `bim`, `aec`, `architecture`, `indesign`, `agent-friendly`, plus stack tags. Prefer brand slugs over the GitHub org login.
 
 ## Homepage
 
@@ -17,11 +17,11 @@ Superseded in detail by **[discoverability.md](discoverability.md)** for `Templa
 
 ## Social preview
 
-- **1280×640** dark [`brand/social-preview.png`](../brand/social-preview.png). Accent `#7DFFFF` only.
+- **1280×640** dark [`brand/final/social-preview.png`](../brand/final/social-preview.png). Accent `#7DFFFF` only.
 
 ## README header
 
-1. Dark logo (`brand/logo.svg` or repo media) — **no light variant**.
+1. Dark header (`brand/final/readme-header.png` or `brand/final/lakehouse-mark.svg`) - **no light variant**.
 2. Keyword-rich **first paragraph** ([discoverability.md](discoverability.md)).
 3. Badge row: CI, release, license, Scorecard (public). URLs from `github.repository_owner` / `org.json`:
 
@@ -37,7 +37,7 @@ Superseded in detail by **[discoverability.md](discoverability.md)** for `Templa
 
 See [sen-only-github-settings.md](sen-only-github-settings.md) and [search-and-analytics.md](search-and-analytics.md).
 
-- [ ] Repository description, topics (8–20), homepage
+- [ ] Repository description, topics (8-20), homepage
 - [ ] Social preview image
 - [ ] Discussions enabled
 - [ ] Immutable releases / tag protection

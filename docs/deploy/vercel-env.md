@@ -1,6 +1,6 @@
 # Vercel environment variables (org canonical)
 
-Applies to **all** LakeHouse templates (`Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource`) and their descendants. ZERO COST. Agents must not mutate Vercel env vars without Sen’s explicit approval — see [AGENTS.md](../../AGENTS.md) **Never do**.
+Applies to **all** LakeHouse templates (`Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource`) and their descendants. ZERO COST. Agents must not mutate Vercel env vars without Sen’s explicit approval - see [AGENTS.md](../../AGENTS.md) **Never do**.
 
 ## Shared vs project
 
@@ -14,7 +14,7 @@ Do not duplicate the same secret across projects as separate project-level copie
 ## Naming convention
 
 - **`UPPER_SNAKE_CASE`** only.
-- Prefix by **domain or service**: `LAKEHOUSE_*`, `WIDGET_*`, `DOCS_*`, `AUTH_*`, etc. (brand/service — not the GitHub org login).
+- Prefix by **domain or service**: `LAKEHOUSE_*`, `WIDGET_*`, `DOCS_*`, `AUTH_*`, etc. (brand/service - not the GitHub org login).
 - **`NEXT_PUBLIC_`** (or the framework’s public prefix) **only** for values that are truly public in the browser bundle. Never put tokens, private keys, or webhook secrets behind a public prefix.
 - Prefer descriptive names over abbreviations that only one person understands.
 
@@ -39,7 +39,7 @@ vercel env pull .env.local
 
 - Writes **`.env.local`** (or the path you pass).
 - **`.env*` is always gitignored** and never committed.
-- Secret scanning (gitleaks workflow template) treats committed env files as deny-list failures — do not “fix” by renaming.
+- Secret scanning (gitleaks workflow template) treats committed env files as deny-list failures - do not “fix” by renaming.
 
 ## Prefer OIDC over long-lived tokens
 
@@ -59,4 +59,4 @@ Reading docs and drafting inventory **names** is fine. Pulling env locally is on
 
 - Inventory (names only): [secrets-inventory.template.md](secrets-inventory.template.md)
 - Rotation checklist: [secrets-rotation-checklist.md](secrets-rotation-checklist.md)
-- Important credentials live in the **owner’s vault** (Sen’s Google Drive) — never copy values into git.
+- Important credentials live in the **owner’s vault** (Sen’s Google Drive) - never copy values into git.

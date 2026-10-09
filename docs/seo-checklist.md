@@ -5,7 +5,7 @@ Use for `Template-Widget`, `Template-OpenSource`, their public descendants, and 
 ## GitHub repo
 
 - [ ] Description set (keyword-rich, audience-clear)
-- [ ] **8–20** topics from the approved pool
+- [ ] **8-20** topics from the approved pool
 - [ ] README logo (dark) + **keyword-rich first paragraph**
 - [ ] Social preview **1280×640** uploaded
 - [ ] Homepage = path on `domain` (not `*.github.io`)

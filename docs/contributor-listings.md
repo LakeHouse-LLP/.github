@@ -1,8 +1,8 @@
 # Contributor listings guide
 
-Zero-cost directories that route newcomers to **`good first issue`** / **`help wanted`** work on public **widget** or **OSS** repos. Do this only after labels are synced and **3–5** starter issues exist ([starter-issues.md](starter-issues.md)).
+Zero-cost directories that route newcomers to **`good first issue`** / **`help wanted`** work on public **widget** or **OSS** repos. Do this only after labels are synced and **3-5** starter issues exist ([starter-issues.md](starter-issues.md)).
 
-Build repo URLs from `github.repository_owner` / `org.json` — do not hardcode the org login in templates.
+Build repo URLs from `github.repository_owner` / `org.json` - do not hardcode the org login in templates.
 
 ## up-for-grabs.net
 

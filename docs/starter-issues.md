@@ -1,6 +1,6 @@
 # Seeding starter issues
 
-Each public repo (`Template-Widget` widgets, `Template-OpenSource` OSS, and their plain-named descendants) should keep **3–5** open issues labeled for newcomers.
+Each public repo (`Template-Widget` widgets, `Template-OpenSource` OSS, and their plain-named descendants) should keep **3-5** open issues labeled for newcomers.
 
 ## Labels
 
@@ -16,13 +16,13 @@ Also use `documentation`, `bug`, `enhancement`, `needs-triage` as appropriate.
 ## How to seed (per repo)
 
 1. Sync labels (`label-sync` workflow).
-2. Open **3–5** issues before advertising the repo (listings, launch posts).
+2. Open **3-5** issues before advertising the repo (listings, launch posts).
 3. Each starter issue should include:
-   - **Why it matters** (one sentence)
-   - **Acceptance criteria** (checklist)
-   - **Pointers** (files/folders to touch)
-   - **Out of scope** (what not to do)
-   - Estimate: “good first” ≈ under an evening
+ - **Why it matters** (one sentence)
+ - **Acceptance criteria** (checklist)
+ - **Pointers** (files/folders to touch)
+ - **Out of scope** (what not to do)
+ - Estimate: “good first” ≈ under an evening
 4. Prefer docs typos, README examples, test fixtures, small UI copy, and tightly scoped bugs over architecture rewrites.
 5. Assign no one; let contributors self-select. Answer questions within the [GOVERNANCE.md](../GOVERNANCE.md) response goals.
 
@@ -35,4 +35,4 @@ Also use `documentation`, `bug`, `enhancement`, `needs-triage` as appropriate.
 
 ## Maintenance
 
-When a starter issue closes, open a replacement so the count stays in the 3–5 range before the next listing refresh ([docs/contributor-listings.md](contributor-listings.md)).
+When a starter issue closes, open a replacement so the count stays in the 3-5 range before the next listing refresh ([docs/contributor-listings.md](contributor-listings.md)).

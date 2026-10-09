@@ -8,6 +8,6 @@
     "packageScope": "Stable brand-based npm/container scope. Do not tie to orgName — survives org rename.",
     "domain": "Custom domain for public links (docs, Pages). Never use *.github.io.",
     "orgName": "Current GitHub organization login. Update during rename; see docs/org-rename-runbook.md.",
-    "brand": "Public product brand (LakeHouse Studio). Dark mode only; accent #7DFFFF."
+    "brand": "LakeHouse Studio v0.3. Dark only; grey ramp #161616/#1E1E1E/#262626/#2E2E2E/#383838; accent #7DFFFF; Geist/Geist Mono; tagline: A second home for your design practice. See brand/."
   }
 }
