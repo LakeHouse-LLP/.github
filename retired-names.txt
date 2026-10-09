@@ -1,9 +1,11 @@
-# Retired repository names for LakeHouse-LLP
+# Retired repository (and org login) names for this organization.
+# Current org login: see .lakehouse/org.json → orgName
 #
 # Format:
-#   - One name per line (exact GitHub repo name, no org prefix).
+#   - One name per line (exact GitHub repo name or retired org login, no owner prefix).
 #   - Lines starting with # are comments.
 #   - Optional trailing comment after the name: <name><spaces>#<note>
 #   - Do not create new repositories that reuse these names.
+#   - After an org rename, record the old org login here and squat it (see docs/org-rename-runbook.md).
 #
 LakeHouse-Template  # renamed to Template-Monorepo

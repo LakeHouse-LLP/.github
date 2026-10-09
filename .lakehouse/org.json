@@ -1,0 +1,12 @@
+{
+  "orgName": "LakeHouse-LLP",
+  "brand": "LakeHouse",
+  "packageScope": "@lakehouse",
+  "domain": "REPLACE_WITH_CUSTOM_DOMAIN",
+  "defaultsRepo": ".github",
+  "notes": {
+    "packageScope": "Stable brand-based npm/container scope. Do not tie to orgName — survives org rename.",
+    "domain": "Custom domain for public links (docs, Pages). Never use *.github.io.",
+    "orgName": "Current GitHub organization login. Update during rename; see docs/org-rename-runbook.md."
+  }
+}

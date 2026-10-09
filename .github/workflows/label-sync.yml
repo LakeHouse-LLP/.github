@@ -1,13 +1,16 @@
-# Reusable + manual label sync for LakeHouse-LLP.
+# Reusable + manual label sync.
 # Labels must exist in each target repo; call this workflow from that repo.
 #
-# Example (in another repo):
+# Example (in another repo) — owner must be a literal in `uses:` (GitHub limitation).
+# Copy owner from .lakehouse/org.json orgName or github.repository_owner after rename:
 #   jobs:
 #     labels:
-#       uses: LakeHouse-LLP/.github/.github/workflows/label-sync.yml@main
+#       uses: <orgName>/.github/.github/workflows/label-sync.yml@main
 #       permissions:
 #         contents: read
 #         issues: write
+#
+# Pins / path: see .lakehouse/pins.json → reusableWorkflows.labelSync
 
 name: label-sync
 
@@ -20,7 +23,7 @@ on:
         required: false
         default: false
       labels-ref:
-        description: Git ref of LakeHouse-LLP/.github to read labels.yml from
+        description: Git ref of the defaults (.github) repo to read labels.yml from
         type: string
         required: false
         default: main
@@ -32,7 +35,7 @@ on:
         required: false
         default: false
       labels-ref:
-        description: Git ref of LakeHouse-LLP/.github to read labels.yml from
+        description: Git ref of the defaults (.github) repo to read labels.yml from
         type: string
         required: false
         default: main
@@ -53,18 +56,20 @@ jobs:
       issues: write
     steps:
       - name: Checkout caller / this repository
+        # pin: .lakehouse/pins.json → actions.checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Resolve labels.yml
         env:
           LABELS_REF: ${{ inputs.labels-ref || 'main' }}
+          OWNER: ${{ github.repository_owner }}
         run: |
           set -euo pipefail
           mkdir -p .github
-          if [ "${{ github.repository }}" = "LakeHouse-LLP/.github" ] && [ -s .github/labels.yml ]; then
-            echo "Using labels.yml from checkout (canonical .github repo)"
+          if [ "${{ github.repository }}" = "${OWNER}/.github" ] && [ -s .github/labels.yml ]; then
+            echo "Using labels.yml from checkout (canonical defaults repo)"
           else
-            url="https://raw.githubusercontent.com/LakeHouse-LLP/.github/${LABELS_REF}/.github/labels.yml"
+            url="https://raw.githubusercontent.com/${OWNER}/.github/${LABELS_REF}/.github/labels.yml"
             echo "Downloading ${url}"
             curl -fsSL "$url" -o .github/labels.yml
           fi
@@ -74,6 +79,7 @@ jobs:
           fi
 
       - name: Sync labels
+        # pin: .lakehouse/pins.json → actions.labeler
         uses: crazy-max/ghaction-github-labeler@548a7c3603594ec17c819e1239f281a3b801ab4d # v6.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

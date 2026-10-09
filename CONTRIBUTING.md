@@ -1,6 +1,8 @@
 # Contributing
 
-Thanks for contributing to LakeHouse-LLP. Read [AGENTS.md](AGENTS.md) for org house rules and the **Never do** list. Sen reviews and merges; do not merge into `Template-*` or `.github` yourself.
+Thanks for contributing. Read [AGENTS.md](AGENTS.md) for org house rules and the **Never do** list. Sen reviews and merges; do not merge into `Template-*` or `.github` yourself.
+
+Current org login, brand, package scope, and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: [`.lakehouse/pins.json`](.lakehouse/pins.json).
 
 ## Org constraints (summary)
 
@@ -8,7 +10,8 @@ Thanks for contributing to LakeHouse-LLP. Read [AGENTS.md](AGENTS.md) for org ho
 - **Runners** — Public repos: GitHub-hosted only. Private repos: self-hosted only. Never put self-hosted runners on public repos.
 - **Merges** — Merge commits only. Never squash or rebase-merge on GitHub.
 - **Epics** — Live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo), not GitHub Issues.
-- **Naming** — `Template-Monorepo`, `Template-Sandbox`, `Template-OpenSource` are templates; this `.github` repo holds org defaults; `sandbox-*` / `legacy-*` are private disposable; open-source repos use plain names. See [retired-names.txt](retired-names.txt).
+- **Naming** — `Template-Monorepo`, `Template-Sandbox`, `Template-OpenSource` are templates; this defaults repo holds org defaults; `sandbox-*` / `legacy-*` are private disposable; open-source repos use plain names. See [retired-names.txt](retired-names.txt).
+- **Identity** — Do not hardcode the GitHub org login. Use `.lakehouse/org.json` or `${{ github.repository_owner }}`. See [docs/org-rename-runbook.md](docs/org-rename-runbook.md).
 
 ## Stacked PRs
 
@@ -70,6 +73,15 @@ Ledger / data edits in the style of **senzhang-todo** may go **straight to `main
   - touch `CHANGELOG.md` and/or add a changeset, **or**
   - carry the `skip-changelog` label.
 - The `changelog-check` workflow template enforces this.
+
+## Org name lint
+
+PRs must not introduce hardcoded GitHub org login strings outside the allowlist (see `.lakehouse/org-name-lint-allowlist.txt`). Run locally:
+
+```bash
+bash scripts/org-name-lint.sh
+bash scripts/check-pins.sh
+```
 
 ## Pull requests
 

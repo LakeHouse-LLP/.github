@@ -1,0 +1,6 @@
+{
+  "name": "LakeHouse org-name-lint",
+  "description": "Fails on hardcoded GitHub org login outside the allowlist. Uses github.repository_owner to fetch policy files from the defaults repo.",
+  "iconName": "octicon search",
+  "categories": ["Continuous integration"]
+}

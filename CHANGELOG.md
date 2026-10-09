@@ -8,6 +8,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- `.lakehouse/org.json` as the source of truth for `orgName`, `brand`, `packageScope`, and `domain`.
+- `.lakehouse/pins.json` for action SHAs and reusable workflow paths; `scripts/check-pins.sh`.
+- Org-name lint (`scripts/org-name-lint.sh`) + `org-defaults-ci` workflow + `org-name-lint` workflow template.
+- `docs/org-rename-runbook.md` (before / during / after, including squatting the old org name).
+
+### Changed
+
+- Workflows and docs prefer `org.json` / `${{ github.repository_owner }}` over a hardcoded org login.
+
+### Added (scaffold)
+
 - Org profile README, community health files (Code of Conduct, Contributing, Security, Support).
 - `AGENTS.md` / `CLAUDE.md` house rules and Never do list.
 - `retired-names.txt`, Sen-only GitHub settings doc, changelog convention doc.

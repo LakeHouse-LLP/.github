@@ -1,0 +1,29 @@
+# CI for this defaults repo: org-name lint + pins check.
+# pull_request with no branches filter (stacked PRs).
+
+name: org-defaults-ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        # pin: .lakehouse/pins.json → actions.checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Org name lint
+        run: bash scripts/org-name-lint.sh
+
+      - name: Pins check
+        run: bash scripts/check-pins.sh

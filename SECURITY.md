@@ -2,7 +2,7 @@
 
 ## Supported versions
 
-Security fixes apply to the default branch (`main`) of each active LakeHouse-LLP repository. Disposable `sandbox-*` and `legacy-*` repos are out of scope unless Sen says otherwise.
+Security fixes apply to the default branch (`main`) of each active repository in this organization. Disposable `sandbox-*` and `legacy-*` repos are out of scope unless Sen says otherwise.
 
 ## Reporting a vulnerability
 

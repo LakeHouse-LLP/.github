@@ -1,6 +1,8 @@
-# LakeHouse-LLP — agent & human house rules
+# LakeHouse — agent & human house rules
 
-Org-wide defaults for LakeHouse-LLP. Epics live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo), not GitHub Issues. Sen is the sole owner who reviews and merges; there is no second owner and no auto-archive.
+Org-wide defaults. Current GitHub `orgName`, `brand`, `packageScope`, and public `domain` are defined in [`.lakehouse/org.json`](.lakehouse/org.json). Action / reusable-workflow pins: [`.lakehouse/pins.json`](.lakehouse/pins.json).
+
+Epics live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo), not GitHub Issues. Sen is the sole owner who reviews and merges; there is no second owner and no auto-archive.
 
 `CLAUDE.md` imports this file — keep rules here.
 
@@ -15,10 +17,13 @@ Org-wide defaults for LakeHouse-LLP. Epics live in [SenZhang-Plus/SenZhang-Todo]
 | Merge method | **Merge commits only** (never squash or rebase-merge) |
 | Epics | SenZhang-Plus/SenZhang-Todo |
 | Templates | `Template-Monorepo`, `Template-Sandbox`, `Template-OpenSource` |
-| Org defaults | This `.github` repository |
+| Org defaults | This `.github` / `defaultsRepo` repository |
 | Disposable private | `sandbox-*`, `legacy-*` |
 | Open-source names | Plain names (not `Template-*` / `sandbox-*` / `legacy-*`) |
+| Package scope | Brand-based from `org.json` (`packageScope`) — **not** the org login |
+| Public links | Custom `domain` from `org.json` — **never** `*.github.io` |
 | Retired names | See [retired-names.txt](retired-names.txt) — do not reuse |
+| Org rename | [docs/org-rename-runbook.md](docs/org-rename-runbook.md) |
 
 Settings only Sen changes in the GitHub UI: [docs/sen-only-github-settings.md](docs/sen-only-github-settings.md).
 
@@ -38,6 +43,13 @@ Settings only Sen changes in the GitHub UI: [docs/sen-only-github-settings.md](d
 - pnpm repos: changesets under `.changeset/`.
 - Each PR touches CHANGELOG/changeset **or** has `skip-changelog`.
 
+## Org identity (rename-safe)
+
+- Read `orgName` / `brand` / `packageScope` / `domain` from `.lakehouse/org.json`.
+- In GitHub Actions runtime steps, prefer `${{ github.repository_owner }}` over hardcoding the login.
+- Reusable workflow `uses:` strings must be literals — copy the owner from `org.json` / pins when calling from other repos, and update them during rename (see pins.json + runbook).
+- CI **org-name-lint** fails if the org login is hardcoded outside the allowlist.
+
 ## Never do
 
 Agents and contributors must **never**:
@@ -48,12 +60,13 @@ Agents and contributors must **never**:
 4. **Delete or rename** repositories, branches, or tags.
 5. **Merge** into `Template-*` or `.github` (Sen merges those).
 6. **Vendor** shared code (copy-paste org libraries into repos); consume shared packages or templates instead.
-7. **Push to an unexpected remote** (only the repo’s configured `origin` for LakeHouse-LLP / the intended fork; never add or push to unrelated remotes).
+7. **Push to an unexpected remote** (only the repo’s configured `origin` for this org / the intended fork; never add or push to unrelated remotes).
+8. **Hardcode the GitHub org login** in workflows, badges, or docs (use `org.json` or `github.repository_owner`; allowlisted files only for historical/rename notes).
 
 ## Allowed defaults for agents
 
 - Open **draft** PRs; leave merge to Sen for protected/template/org-default repos.
-- Use workflow templates under `workflow-templates/` with actions **pinned by SHA**, least-privilege `permissions:`, and the correct runner tier.
+- Use workflow templates under `workflow-templates/` with actions **pinned by SHA** (from `.lakehouse/pins.json`), least-privilege `permissions:`, and the correct runner tier.
 - Sync labels via the reusable `label-sync` workflow; labels must exist in each target repo.
 - For public repos: DCO `Signed-off-by` on commits.
 - Prefer merge commits when merging is explicitly allowed by Sen.
