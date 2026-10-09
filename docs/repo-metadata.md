@@ -1,6 +1,6 @@
 # Repository metadata standard
 
-Superseded in detail by **[discoverability.md](discoverability.md)** for `Template-Widget`, public widget repos, and this `.github` repo. This page remains the short checklist for all durable repos. Naming: [naming.md](naming.md).
+Superseded in detail by **[discoverability.md](discoverability.md)** for `Template-Widget`, `Template-OpenSource`, their public descendants, and this `.github` repo. This page remains the short checklist for all durable repos. Naming: [naming.md](naming.md).
 
 ## Description
 

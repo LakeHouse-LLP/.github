@@ -11,7 +11,7 @@
 
 # .github
 
-**LakeHouse Studio** org-wide shared defaults — the GitHub backbone for a modular digital office for designers and agents. Public repos are standalone, agent-friendly **widgets**; the private monorepo hosts them. This repository holds community health files, release and SEO standards, brand placeholders, and reusable workflow templates for `Template-Widget` and public widget repos.
+**LakeHouse Studio** org-wide shared defaults — the GitHub backbone for a modular digital office for designers and agents. Public work uses **Template-Widget** (LakeHouse-extensible widgets) or **Template-OpenSource** (general OSS, no widget concepts); the private monorepo is the host. This repository holds community health files, release and SEO standards, brand placeholders, and reusable workflows/docs both public templates inherit.
 
 Sen reviews and merges. ZERO COST / GitHub Free. Do not merge without Sen.
 
@@ -24,7 +24,7 @@ Identity and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: 
 | [profile/README.md](profile/README.md) | Org profile README (LakeHouse Studio) |
 | [brand/](brand/) | Dark-only logo / social preview placeholders |
 | [CITATION.cff](CITATION.cff) | Citation metadata |
-| [docs/naming.md](docs/naming.md) | Templates, public widgets, retired names |
+| [docs/naming.md](docs/naming.md) | Four templates + which-template guide |
 | [docs/discoverability.md](docs/discoverability.md) | Descriptions, topics, pins, profile strategy |
 | [docs/docs-site.md](docs/docs-site.md) | Astro Starlight org docs decision |
 | [docs/seo-checklist.md](docs/seo-checklist.md) | Reusable SEO checklist |

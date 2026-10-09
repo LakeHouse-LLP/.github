@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Renamed template references: `Template-OpenSource` → `Template-Widget` (retired name recorded). Public repos documented as standalone agent-friendly widgets ([docs/naming.md](docs/naming.md)).
+- Dual public templates: **Template-Widget** (LakeHouse widgets) and recreated **Template-OpenSource** (general OSS, no widget concepts). `Template-OpenSource` removed from retired-names (active again; note that an earlier repo of that name was renamed to Template-Widget on 2026-10-09). Four-template chooser in [docs/naming.md](docs/naming.md).
 
 ### Added
 

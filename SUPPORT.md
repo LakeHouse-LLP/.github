@@ -20,8 +20,8 @@ Org login / brand / public domain: [`.lakehouse/org.json`](.lakehouse/org.json).
 ## Scope
 
 - Org defaults live in this defaults (`.github`) repository.
-- Templates: `Template-Monorepo` (private host), `Template-Sandbox`, `Template-Widget` (public widget scaffold).
-- Public repos are standalone widgets (plain names) — [docs/naming.md](docs/naming.md).
+- Templates: `Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource` — [docs/naming.md](docs/naming.md).
+- Public repos: LakeHouse widgets **or** general OSS (plain names); both inherit org defaults from this repo.
 - `sandbox-*` and `legacy-*` repos are private and disposable.
 - There is no second owner and no auto-archive policy.
 - **No automated stale bot** — see [GOVERNANCE.md](GOVERNANCE.md).
