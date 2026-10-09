@@ -45,6 +45,11 @@
       "uses": "changesets/action",
       "version": "v2.1.2",
       "sha": "ae32849d5ba541f9ae29e40e22a623bc13562f51"
+    },
+    "first-interaction": {
+      "uses": "actions/first-interaction",
+      "version": "v3.1.0",
+      "sha": "1c4688942c71f71d4f5502a26ea67c331730fa4d"
     }
   },
   "tools": {

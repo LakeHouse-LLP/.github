@@ -30,14 +30,21 @@ Identity and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: 
 | [docs/search-and-analytics.md](docs/search-and-analytics.md) | Search Console, Bing, analytics (Sen) |
 | [docs/launch-checklist.md](docs/launch-checklist.md) | Launch channels checklist |
 | [docs/awesome-lists.md](docs/awesome-lists.md) | Awesome-list submission guide |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Friendly contributor guide + 5-minute setup |
+| [GOVERNANCE.md](GOVERNANCE.md) | Response times, stale policy, Discussions |
+| [ROADMAP.md](ROADMAP.md) | Direction for contributors |
+| [docs/starter-issues.md](docs/starter-issues.md) | Seed 3–5 good-first issues |
+| [docs/contributor-listings.md](docs/contributor-listings.md) | up-for-grabs, goodfirstissue.dev, … |
+| [docs/maintainer-playbook.md](docs/maintainer-playbook.md) | Safe review of outside PRs |
 | [docs/releasing.md](docs/releasing.md) | Tags, changesets, notes, rollback |
 | [docs/pre-release-checklist.md](docs/pre-release-checklist.md) | Before Sen publishes a release |
 | [docs/repo-metadata.md](docs/repo-metadata.md) | Short metadata checklist |
 | [docs/media-convention.md](docs/media-convention.md) | `docs/media/` for templates |
 | [docs/sen-only-github-settings.md](docs/sen-only-github-settings.md) | UI settings only Sen changes |
 | [AGENTS.md](AGENTS.md) / [CLAUDE.md](CLAUDE.md) | House rules + Never do |
-| [workflow-templates/](workflow-templates/) | Starter workflows (incl. discoverability-check) |
+| [workflow-templates/](workflow-templates/) | Starter workflows (welcome, discoverability, …) |
 | [scripts/](scripts/) | Node `.mjs` tools |
+| [`.devcontainer/`](.devcontainer/) | Codespaces / Dev Container |
 
 ## Quick policies
 
@@ -47,3 +54,20 @@ Identity and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: 
 - Do not hardcode the GitHub org login — use `org.json` or `${{ github.repository_owner }}`.
 - Scripts are Node `.mjs` (not bash).
 - Dark mode only; single accent `#7DFFFF`.
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://allcontributors.org) specification. Contributions of any kind welcome!

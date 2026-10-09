@@ -81,6 +81,12 @@ Agents and contributors must **never**:
 - Follow [docs/discoverability.md](docs/discoverability.md) for README/topics/pins/profile.
 - Docs site decision: [docs/docs-site.md](docs/docs-site.md) (Astro Starlight on custom domain).
 
+## Contributors
+
+- Friendly path: [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), [docs/maintainer-playbook.md](docs/maintainer-playbook.md).
+- Never run fork PR code on self-hosted runners; never `pull_request_target` + checkout of PR head.
+- Seed `good first issue` / `help wanted` per [docs/starter-issues.md](docs/starter-issues.md).
+
 ## Allowed defaults for agents
 
 - Open **draft** PRs; leave merge to Sen for protected/template/org-default repos.

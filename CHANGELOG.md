@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Contributor growth: friendly `CONTRIBUTING.md` (Mac/Windows + Codespaces), `GOVERNANCE.md`, `ROADMAP.md`, starter-issue + listings guides, maintainer playbook, `good first issue` / `help wanted` labels, welcome workflow template, `.all-contributorsrc`, `.devcontainer/`.
 - Discoverability / SEO: `docs/discoverability.md`, awesome-lists, docs-site (Astro Starlight), SEO + launch + search/analytics checklists, `CITATION.cff`, `scripts/discoverability-check.mjs`, workflow template.
 - Org profile README positioned as **LakeHouse Studio** (digital office / lakeside home office).
 

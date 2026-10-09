@@ -1,0 +1,6 @@
+{
+  "name": "LakeHouse welcome (first interaction)",
+  "description": "Greets first-time issue and PR authors via actions/first-interaction (SHA-pinned). Comment-only; no PR checkout. GitHub-hosted.",
+  "iconName": "octicon smiley",
+  "categories": ["Automation"]
+}
