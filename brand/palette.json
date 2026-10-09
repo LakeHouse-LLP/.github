@@ -1,24 +1,22 @@
 {
-  "brand": "LakeHouse",
-  "note": "Placeholder tokens — Sen may replace with final brand values.",
+  "brand": "LakeHouse Studio",
+  "mode": "dark-only",
+  "note": "Placeholder tokens — swappable when the separate brand guide lands. Single accent token only.",
   "colors": {
-    "ink": "#10241C",
-    "paper": "#F3F6F2",
-    "moss": "#2F6B4F",
-    "mist": "#A8C3B5",
-    "amber": "#C48A2A",
-    "danger": "#A33B2B"
+    "background": "#0B1214",
+    "foreground": "#F4FBFF",
+    "muted": "#8AA0A8",
+    "accent": "#7DFFFF",
+    "danger": "#FF6B6B"
+  },
+  "tokens": {
+    "accent": "#7DFFFF"
   },
   "theme": {
-    "light": {
-      "background": "#F3F6F2",
-      "foreground": "#10241C",
-      "accent": "#2F6B4F"
-    },
     "dark": {
-      "background": "#10241C",
-      "foreground": "#F3F6F2",
-      "accent": "#A8C3B5"
+      "background": "#0B1214",
+      "foreground": "#F4FBFF",
+      "accent": "#7DFFFF"
     }
   }
 }

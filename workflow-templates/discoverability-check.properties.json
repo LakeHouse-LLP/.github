@@ -1,0 +1,6 @@
+{
+  "name": "LakeHouse discoverability-check",
+  "description": "Checks README first paragraph and repository description/topics (8–20) via gh api. GitHub-hosted runners.",
+  "iconName": "octicon telescope",
+  "categories": ["Continuous integration"]
+}

@@ -1,0 +1,48 @@
+# README first paragraph + repo description/topics (8–20) via gh api.
+# Public repos: GitHub-hosted. See docs/discoverability.md.
+# pull_request with no branches filter — stacked PRs must run CI.
+
+name: discoverability-check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - $default-branch
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  discoverability:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        # pin: .lakehouse/pins.json → actions.checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node
+        # pin: .lakehouse/pins.json → actions.setup-node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Ensure discoverability script
+        env:
+          OWNER: ${{ github.repository_owner }}
+          DEFAULTS_REF: main
+        run: |
+          set -euo pipefail
+          mkdir -p scripts docs
+          base="https://raw.githubusercontent.com/${OWNER}/.github/${DEFAULTS_REF}"
+          if [ ! -f scripts/discoverability-check.mjs ]; then
+            curl -fsSL "${base}/scripts/discoverability-check.mjs" -o scripts/discoverability-check.mjs
+          fi
+
+      - name: Run discoverability check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/discoverability-check.mjs

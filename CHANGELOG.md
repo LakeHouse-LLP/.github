@@ -8,6 +8,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Discoverability / SEO: `docs/discoverability.md`, awesome-lists, docs-site (Astro Starlight), SEO + launch + search/analytics checklists, `CITATION.cff`, `scripts/discoverability-check.mjs`, workflow template.
+- Org profile README positioned as **LakeHouse Studio** (digital office / lakeside home office).
+
+### Changed
+
+- Brand kit is **dark-mode-only** with single accent `#7DFFFF`; light assets removed.
+- `org.json` `brand` → `LakeHouse Studio`.
+
+### Added (release system)
+
 - Release system: `docs/releasing.md`, `.github/release.yml`, release-notes template, reusable `release` workflow, public/private/version-pr workflow templates, `brand/` placeholders, repo metadata + pre-release checklists, `scripts/create-release-tag.mjs`.
 - Labels `breaking-change` and `chore` for release-notes grouping.
 - `.lakehouse/org.json` as the source of truth for `orgName`, `brand`, `packageScope`, and `domain`.

@@ -13,11 +13,12 @@ These org/repo controls are **owner-only**. Agents and contributors must not cha
 | **Private vulnerability reporting** | Enable for public (and private as needed) repos so [SECURITY.md](../SECURITY.md) works. |
 | **Discussions** | Enable where questions and **release announcements** should go. |
 | **Immutable releases** | Enable so published release assets/tags cannot be overwritten (see [releasing.md](releasing.md)). |
+| **Org profile + pinned repos** | Keep [`profile/README.md`](../profile/README.md) strategy; pin flagship OSS + docs entry ([discoverability.md](discoverability.md)). |
 
 ## Per repository (Sen checklist)
 
-- [ ] Description, topics, homepage (custom `domain` — see [repo-metadata.md](repo-metadata.md))
-- [ ] Social preview (1280×640 from [`brand/`](../brand/) or repo media)
+- [ ] Description, **8–20 topics**, homepage (custom `domain` — see [discoverability.md](discoverability.md))
+- [ ] Social preview (1280×640 dark [`brand/social-preview.png`](../brand/social-preview.png))
 - [ ] Discussions on
 - [ ] Immutable releases on
 - [ ] Tag rulesets for release tags
@@ -25,6 +26,8 @@ These org/repo controls are **owner-only**. Agents and contributors must not cha
 - [ ] Merge commits only (squash/rebase off)
 - [ ] npm **OIDC trusted publishing** configured for packages (no long-lived npm tokens)
 - [ ] Signing keys for annotated/signed tags (optional but preferred)
+- [ ] Google Search Console + Bing Webmaster + Cloudflare Web Analytics ([search-and-analytics.md](search-and-analytics.md))
+- [ ] After metadata is set on this `.github` repo: remove `DISCOVERABILITY_REQUIRE_METADATA: "false"` from `org-defaults-ci`
 
 ## Also Sen-only (related)
 
