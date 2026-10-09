@@ -25,6 +25,9 @@ Identity and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: 
 | [brand/](brand/) | Dark-only logo / social preview placeholders |
 | [CITATION.cff](CITATION.cff) | Citation metadata |
 | [docs/naming.md](docs/naming.md) | Four templates + which-template guide |
+| [docs/deploy/vercel-env.md](docs/deploy/vercel-env.md) | Vercel shared vs project env vars |
+| [docs/deploy/secrets-inventory.template.md](docs/deploy/secrets-inventory.template.md) | Secrets inventory (names only) |
+| [docs/deploy/secrets-rotation-checklist.md](docs/deploy/secrets-rotation-checklist.md) | Rotation checklist |
 | [docs/discoverability.md](docs/discoverability.md) | Descriptions, topics, pins, profile strategy |
 | [docs/docs-site.md](docs/docs-site.md) | Astro Starlight org docs decision |
 | [docs/seo-checklist.md](docs/seo-checklist.md) | Reusable SEO checklist |
