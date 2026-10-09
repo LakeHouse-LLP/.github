@@ -63,6 +63,10 @@ git commit -s -m "Describe your change"
 - **Naming** — Four templates (`Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource`). See [docs/naming.md](docs/naming.md).
 - **Identity** — Do not hardcode the GitHub org login; use `org.json` or `${{ github.repository_owner }}`.
 
+## Merge queue (public repos)
+
+On GitHub Free, the **merge queue is available for public org repos only** (private needs Enterprise Cloud — we stay ZERO COST). Public repos require the queue on `main` with **merge commits**. Private repos: manual merge commits + up-to-date branch + green CI. Full policy: [docs/merge-queue.md](docs/merge-queue.md). **Sen** enqueues and merges — contributors do not.
+
 ## Stacked PRs
 
 Prefer **small stacked PRs**: each branch is based on the previous feature branch.
@@ -70,9 +74,9 @@ Prefer **small stacked PRs**: each branch is based on the previous feature branc
 1. PR 1: `feature/a` → `main`
 2. PR 2: `feature/b` → `feature/a`
 3. List the stack in every PR body
-4. Merge **bottom-up** with merge commits; retarget the next PR to `main`
+4. Merge **bottom-up**: only PRs targeting `main` enter the merge queue; after the base lands, retarget the next PR to `main`, then Sen enqueues it
 
-Recommended tool: `git rebase --update-refs` (Git 2.38+). CI must use `pull_request` with **no `branches` filter**. Exception: senzhang-todo-style ledger edits may go straight to `main`.
+Recommended tool: `git rebase --update-refs` (Git 2.38+). CI must use `pull_request` with **no `branches` filter**, plus `merge_group` for queue checks. Exception: senzhang-todo-style ledger edits may go straight to `main`.
 
 ## Changelog & releases
 

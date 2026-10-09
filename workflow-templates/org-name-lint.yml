@@ -2,11 +2,13 @@
 # hardcoded outside the allowlist. Prefer org.json or github.repository_owner.
 # Fetch policy files from the defaults repo — do not vendor shared libraries.
 # Scripts are Node .mjs (cross-platform). pull_request has no branches filter.
+# merge_group: required for public-repo merge queue checks (docs/merge-queue.md).
 
 name: org-name-lint
 
 on:
   pull_request:
+  merge_group:
   push:
     branches:
       - $default-branch

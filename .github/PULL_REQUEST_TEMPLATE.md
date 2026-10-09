@@ -26,7 +26,7 @@
 | Parent PR | <!-- URL or "none (targets main)" --> |
 | Child PRs | <!-- URLs or "none" --> |
 
-Merge **bottom-up** with a **merge commit**, then retarget the next PR to `main`. See CONTRIBUTING.md. Reminder: **merge with a merge commit only** (never squash or rebase-merge).
+Merge **bottom-up** with a **merge commit**, then retarget the next PR to `main`. On **public** repos, Sen enqueues PRs targeting `main` via the **merge queue** (see docs/merge-queue.md). Reminder: **merge commit only** (never squash or rebase-merge).
 
 ## Test evidence
 
@@ -43,4 +43,4 @@ Merge **bottom-up** with a **merge commit**, then retarget the next PR to `main`
 - [ ] No secrets, credentials, or client content in the diff or discussion
 - [ ] Docs / README updated when behavior or process changed
 - [ ] DCO sign-off (`Signed-off-by:`) on commits for **public** repos
-- [ ] Will merge with a **merge commit** (not squash / rebase-merge)
+- [ ] Will merge with a **merge commit** (not squash / rebase-merge); public repos: Sen uses the **merge queue** on `main`

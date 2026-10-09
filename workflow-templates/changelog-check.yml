@@ -1,10 +1,12 @@
 # Requires each PR to touch CHANGELOG.md / .changeset/ or carry skip-changelog.
 # No branches filter — stacked PRs into feature branches must run this check.
+# merge_group: required for public-repo merge queue checks (docs/merge-queue.md).
 
 name: changelog-check
 
 on:
   pull_request:
+  merge_group:
 
 permissions: {}
 

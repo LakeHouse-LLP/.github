@@ -28,13 +28,21 @@ Epics live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/Sen
 
 Settings only Sen changes in the GitHub UI: [docs/sen-only-github-settings.md](docs/sen-only-github-settings.md).
 
+## Merge queue
+
+- Canonical policy: [docs/merge-queue.md](docs/merge-queue.md).
+- **Public** repos: require merge queue on `main` (Free plan allows public org repos only). Merge method = **merge commit**.
+- **Private** repos: no queue on Free — manual merge commits + up-to-date + green CI.
+- Required CI workflows must include `merge_group:` (in addition to `pull_request` with no branches filter).
+- Agents **never enqueue or merge** PRs (including merge queue). Sen does.
+
 ## Stacked PRs
 
 - Prefer small stacked PRs; each branch is based on the previous feature branch.
 - List the full stack in every PR body (position, parent, children).
-- Merge **bottom-up** with **merge commits**, then retarget the next PR to `main`.
+- Merge **bottom-up** with **merge commits**, then retarget the next PR to `main` and (on public repos) Sen enqueues it.
 - Recommended zero-cost tool: **`git rebase --update-refs`** (Git 2.38+). See [CONTRIBUTING.md](CONTRIBUTING.md).
-- CI: `on.pull_request` with **no `branches` filter**.
+- CI: `on.pull_request` with **no `branches` filter**, plus `merge_group` for the queue.
 - Rulesets that require PRs must **not** block stacked PRs into feature branches.
 - Exception: senzhang-todo-style ledger/data edits may go straight to `main`.
 
@@ -59,7 +67,7 @@ Agents and contributors must **never**:
 2. **Change org/repo settings, rulesets, or secrets** (Sen-only in the GitHub UI / approved channels).
 3. **Force-push** to any branch on `origin` (including “their” feature branches on shared remotes when policy forbids it — default: no force-push to org remotes).
 4. **Delete or rename** repositories, branches, or tags.
-5. **Merge** into `Template-*` or `.github` (Sen merges those).
+5. **Merge** into `Template-*` or `.github`, or **enqueue** PRs on the merge queue (Sen merges / enqueues those).
 6. **Vendor** shared code (copy-paste org libraries into repos); consume shared packages (e.g. `@lakehouse/widget-sdk`) or templates instead.
 7. **Push to an unexpected remote** (only the repo’s configured `origin` for this org / the intended fork; never add or push to unrelated remotes).
 8. **Hardcode the GitHub org login** in workflows, badges, or docs (use `org.json` or `github.repository_owner`; allowlisted files only for historical/rename notes).
