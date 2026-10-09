@@ -1,107 +1,87 @@
-# Contributing
+# Contributing to LakeHouse Studio
 
-Thanks for contributing. Read [AGENTS.md](AGENTS.md) for org house rules and the **Never do** list. Sen reviews and merges; do not merge into `Template-*` or `.github` yourself.
+Thanks for stopping by — we are glad you are here. This guide gets you productive quickly on **Mac or Windows**. Sen reviews and merges; please open a **draft PR** and do not merge into `Template-*` or `.github` yourself.
 
-Current org login, brand, package scope, and public domain: [`.lakehouse/org.json`](.lakehouse/org.json). Pins: [`.lakehouse/pins.json`](.lakehouse/pins.json).
+House rules (agents and humans): [AGENTS.md](AGENTS.md). Code of conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Governance & response times: [GOVERNANCE.md](GOVERNANCE.md).
+
+Identity / domain: [`.lakehouse/org.json`](.lakehouse/org.json).
+
+## Find something to work on
+
+1. Browse issues labeled **`good first issue`** or **`help wanted`** (see [docs/starter-issues.md](docs/starter-issues.md)).
+2. Say hi in **Discussions** (Ideas / Q&A / Show and tell — Sen enables categories).
+3. Skim [ROADMAP.md](ROADMAP.md) so your idea fits the direction.
+
+## 5-minute setup (Mac & Windows)
+
+Works the same on macOS and Windows (PowerShell or Terminal). Need **Git**, **Node.js 22+**, and a GitHub account.
+
+```bash
+# 1) Fork the repo on GitHub, then clone your fork (replace OWNER/REPO)
+git clone https://github.com/OWNER/REPO.git
+cd REPO
+
+# 2) Install dependencies (pick what the repo uses)
+# pnpm (preferred in monorepos):
+corepack enable
+pnpm install
+# or: npm ci   /   npm install
+
+# 3) Run the smoke checks used in this defaults repo (adapt per product repo)
+node scripts/org-name-lint.mjs
+node scripts/check-pins.mjs
+
+# 4) Create a branch and open a draft PR when ready
+git checkout -b fix/my-change
+```
+
+### Codespaces / Dev Container
+
+Open the repo in **GitHub Codespaces** or VS Code Dev Containers — the checked-in [`.devcontainer/devcontainer.json`](.devcontainer/devcontainer.json) provides Node 22 and common tooling. First boot may take a few minutes; then run the same install/smoke commands as above.
+
+### DCO (public repos)
+
+Sign off commits:
+
+```bash
+git commit -s -m "Describe your change"
+```
+
+## Pull requests (short path)
+
+1. Keep the PR small; prefer [stacked PRs](#stacked-prs) for larger work.
+2. Fill the PR template (summary, stack, tests, checklist).
+3. Touch `CHANGELOG.md` / `.changeset/` **or** add the `skip-changelog` label.
+4. Wait for CI (GitHub-hosted on public repos). Maintainers will not run untrusted fork code on self-hosted runners — see [docs/maintainer-playbook.md](docs/maintainer-playbook.md).
+5. Sen merges with a **merge commit** only (never squash/rebase-merge).
 
 ## Org constraints (summary)
 
-- **ZERO COST** — GitHub Free plan only (no Team, no paid Secret Protection).
-- **Runners** — Public repos: GitHub-hosted only. Private repos: self-hosted only. Never put self-hosted runners on public repos.
-- **Merges** — Merge commits only. Never squash or rebase-merge on GitHub.
-- **Epics** — Live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo), not GitHub Issues.
-- **Naming** — `Template-Monorepo`, `Template-Sandbox`, `Template-OpenSource` are templates; this defaults repo holds org defaults; `sandbox-*` / `legacy-*` are private disposable; open-source repos use plain names. See [retired-names.txt](retired-names.txt).
-- **Identity** — Do not hardcode the GitHub org login. Use `.lakehouse/org.json` or `${{ github.repository_owner }}`. See [docs/org-rename-runbook.md](docs/org-rename-runbook.md).
+- **ZERO COST** — GitHub Free only.
+- **Runners** — Public: GitHub-hosted. Private: self-hosted. Never self-hosted on public.
+- **Epics** — [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo), not GitHub Issues.
+- **Identity** — Do not hardcode the GitHub org login; use `org.json` or `${{ github.repository_owner }}`.
 
 ## Stacked PRs
 
-Prefer **small stacked PRs**: each branch is based on the previous feature branch (not always on `main`).
+Prefer **small stacked PRs**: each branch is based on the previous feature branch.
 
-1. Open PR 1: `feature/a` → `main`.
-2. Open PR 2: `feature/b` → `feature/a` (and so on).
-3. In **every** PR body, fill the **Stack** section (position, parent PR, child PRs).
-4. **Merge bottom-up** with a **merge commit** (never squash/rebase-merge).
-5. After the base PR merges, **retarget** the next PR to `main` (or the new base), then merge.
+1. PR 1: `feature/a` → `main`
+2. PR 2: `feature/b` → `feature/a`
+3. List the stack in every PR body
+4. Merge **bottom-up** with merge commits; retarget the next PR to `main`
 
-### Recommended tool: `git rebase --update-refs`
+Recommended tool: `git rebase --update-refs` (Git 2.38+). CI must use `pull_request` with **no `branches` filter**. Exception: senzhang-todo-style ledger edits may go straight to `main`.
 
-Built into Git (2.38+) — zero cost, no extra service:
+## Changelog & releases
 
-```bash
-# While on the tip of the stack, after updating an earlier commit:
-git rebase --update-refs main
+- Keep a Changelog + changesets for pnpm repos — [docs/changelog-convention.md](docs/changelog-convention.md)
+- Releases: [docs/releasing.md](docs/releasing.md)
 
-# Or interactively, keeping dependent branches moving with you:
-git rebase -i --update-refs main
-```
+## Recognition
 
-Workflow sketch:
+We use [All Contributors](https://allcontributors.org/). After your PR lands, you may appear in the README contributors table (see [`.all-contributorsrc`](.all-contributorsrc)).
 
-```bash
-git checkout -b feature/1 main
-# ... commit ...
-gh pr create --base main
+## Questions
 
-git checkout -b feature/2 feature/1
-# ... commit ...
-gh pr create --base feature/1
-# Edit PR body Stack section.
-
-# After review of feature/1: merge with merge commit on GitHub.
-git checkout feature/2
-git fetch origin
-git rebase --update-refs origin/main
-# Retarget PR 2 to main, then merge with merge commit.
-```
-
-Alternatives (also fine if you already use them): [git-spr](https://github.com/ejoffe/spr), [ghstack](https://github.com/ezyang/ghstack), Graphite free CLI. Prefer one tool per stack and keep the Stack section accurate.
-
-### CI and rulesets for stacks
-
-- CI must run on `pull_request` **with no `branches:` filter**, so PRs into feature branches still get checks.
-- Org/repo **rulesets that require PRs must not block** stacked PRs whose base is a feature branch (require PRs into `main` / protected defaults only, or allow the stack pattern Sen configures).
-
-### Exception
-
-Ledger / data edits in the style of **senzhang-todo** may go **straight to `main`** when that repo’s process says so (no stack required).
-
-## Changelog
-
-- Follow [Keep a Changelog](https://keepachangelog.com/). Keep an **Unreleased** section.
-- **pnpm** monorepos: also use [changesets](https://github.com/changesets/changesets) under `.changeset/`.
-- Every PR must either:
-  - touch `CHANGELOG.md` and/or add a changeset, **or**
-  - carry the `skip-changelog` label.
-- The `changelog-check` workflow template enforces this.
-
-## Releases
-
-See [docs/releasing.md](docs/releasing.md) and [docs/pre-release-checklist.md](docs/pre-release-checklist.md). Version via changesets; CI tags; draft GitHub Releases; Sen publishes.
-
-## Org name lint
-
-PRs must not introduce hardcoded GitHub org login strings outside the allowlist (see `.lakehouse/org-name-lint-allowlist.txt`). Run locally:
-
-```bash
-node scripts/org-name-lint.mjs
-node scripts/check-pins.mjs
-```
-
-## Pull requests
-
-Use the org PR template. Checklist highlights:
-
-- CI green on the PR (including when base is a feature branch).
-- CHANGELOG / changeset or `skip-changelog`.
-- No secrets or client content.
-- Docs / README updated when behavior changes.
-- **DCO sign-off** (`Signed-off-by:`) on commits for **public** repos.
-- Merge with a **merge commit** only.
-
-## Issues
-
-Use the YAML issue forms (bug / feature / docs). Blank issues are off; questions go to **Discussions**. Labels are defined in [`.github/labels.yml`](.github/labels.yml); sync them into each repo with the reusable [label-sync](.github/workflows/label-sync.yml) workflow.
-
-## Code of conduct
-
-See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Use **Discussions** (not blank issues). Support expectations: [SUPPORT.md](SUPPORT.md).
