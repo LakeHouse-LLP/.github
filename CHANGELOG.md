@@ -6,12 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Naming: durable repos use `[Category]-LakeHouse-[DescriptiveName]` (Template / Package / Product); long and clear beats ambiguous. Exceptions: `.github`, private `sandbox-*` / `legacy-*`. Templates renamed to `Template-LakeHouse-*`; docs and links updated. See [docs/naming.md](docs/naming.md).
+
 ### Added
 
+- Retired names (2026-10-10): `EnneadTab-Logger-Legacy` (absorbed into `Package-LakeHouse-Logger`, archived as `EnneadTab-Logger-Legacy-archive`); `Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource` (renamed to `Template-LakeHouse-*`).
 - Sen-only GitHub settings: enable **Automatically delete head branches** on every org repo, with a stacked-PR retarget caution ([docs/sen-only-github-settings.md](docs/sen-only-github-settings.md)).
 - Absorb-legacy pointer: [docs/absorb-legacy.md](docs/absorb-legacy.md) and one-line `AGENTS.md` row pointing at the `sen-guide-absorb-repo` skill (no duplicated absorb steps).
 - Template curation pointer: [docs/template-curation.md](docs/template-curation.md) and one-line `AGENTS.md` row pointing at the `lakehouse-template-curation` skill (org skills use the `lakehouse-*` prefix; no duplicated curation steps).
-- Continuous self-improvement: house rule in `AGENTS.md`, [docs/lessons.md](docs/lessons.md) log, PR template **What did we learn?**, and CONTRIBUTING section on org-wide lesson flow into `Template-*` repos.
+- Continuous self-improvement: house rule in `AGENTS.md`, [docs/lessons.md](docs/lessons.md) log, PR template **What did we learn?**, and CONTRIBUTING section on org-wide lesson flow into `Template-LakeHouse-*` repos.
 - Brand kit **v0.3** under `brand/` (tokens, writing, final assets, Python build scripts); profile/README header + tagline; `scripts/copy-lint.mjs`; Sen-only avatar (`final/png/appicon-1024.png`) and social preview (`final/social-preview.png`) steps.
 - Merge queue canonical policy: [docs/merge-queue.md](docs/merge-queue.md); `merge_group` on required CI workflows/templates; Sen-only ruleset click-path; agents never enqueue/merge.
 - Vercel env canonical rules: [docs/deploy/vercel-env.md](docs/deploy/vercel-env.md), secrets inventory + rotation templates; AGENTS.md Never-do for mutating Vercel env without Sen approval.

@@ -6,7 +6,7 @@
 
 | Topic | Who |
 | --- | --- |
-| Merge to `main`, `Template-*`, `.github` | Sen |
+| Merge to `main`, `Template-LakeHouse-*`, `.github` | Sen |
 | Org/repo settings, rulesets, secrets, Discussions categories | Sen only ([docs/sen-only-github-settings.md](docs/sen-only-github-settings.md)) |
 | Roadmap direction | Sen; community Ideas welcome in Discussions |
 | Security advisories | Sen ([SECURITY.md](SECURITY.md)) |

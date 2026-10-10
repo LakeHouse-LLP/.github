@@ -42,4 +42,4 @@ The current login may appear in this runbook and other allowlisted files only. E
 
 - Epics remain in SenZhang-Plus/SenZhang-Todo (outside this org).
 - There is no second owner and no auto-archive.
-- Draft PRs only into `Template-*` and `.github` unless Sen merges.
+- Draft PRs only into `Template-LakeHouse-*` and `.github` unless Sen merges.

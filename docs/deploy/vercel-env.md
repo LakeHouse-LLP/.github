@@ -1,6 +1,6 @@
 # Vercel environment variables (org canonical)
 
-Applies to **all** LakeHouse templates (`Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource`) and their descendants. ZERO COST. Agents must not mutate Vercel env vars without Sen’s explicit approval - see [AGENTS.md](../../AGENTS.md) **Never do**.
+Applies to **all** LakeHouse templates (`Template-LakeHouse-Monorepo`, `Template-LakeHouse-Sandbox`, `Template-LakeHouse-Widget`, `Template-LakeHouse-OpenSource`) and their descendants. ZERO COST. Agents must not mutate Vercel env vars without Sen’s explicit approval - see [AGENTS.md](../../AGENTS.md) **Never do**.
 
 ## Shared vs project
 

@@ -1,6 +1,6 @@
 # Launch checklist
 
-For public **LakeHouse Studio** launches - widgets (`Template-Widget`) or general OSS (`Template-OpenSource`). Complete [seo-checklist.md](seo-checklist.md) first. Use Food4Rhino / Autodesk listings only when the product fits; widgets may also emphasize host load/install docs.
+For public **LakeHouse Studio** launches - widgets (`Template-LakeHouse-Widget`) or general OSS (`Template-LakeHouse-OpenSource`). Complete [seo-checklist.md](seo-checklist.md) first. Use Food4Rhino / Autodesk listings only when the product fits; widgets may also emphasize host load/install docs.
 
 ## Product readiness
 

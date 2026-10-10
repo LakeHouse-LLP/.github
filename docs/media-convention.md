@@ -1,6 +1,6 @@
 # `docs/media/` convention (templates and product repos)
 
-Every **Template-*** and product repo should use `docs/media/` for screenshots and demos referenced from the README and docs.
+Every **Template-LakeHouse-*** and product repo should use `docs/media/` for screenshots and demos referenced from the README and docs.
 
 ## Layout
 
