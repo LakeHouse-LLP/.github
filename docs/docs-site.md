@@ -37,4 +37,4 @@ Prefer **GitHub Pages** (project or org site) **or Vercel free**, with the **cus
 
 ## Implementation note
 
-The docs site may live in a dedicated public repo (plain name) or inside Template-Monorepo’s Astro package - **Sen chooses** the repo name when DNS is ready. Until `domain` is set, keep content in-repo under `docs/` and do not advertise github.io URLs.
+The docs site may live in a dedicated public repo (`Product-LakeHouse-[DescriptiveName]`) or inside Template-LakeHouse-Monorepo's Astro package - **Sen chooses** the repo name when DNS is ready. Until `domain` is set, keep content in-repo under `docs/` and do not advertise github.io URLs.

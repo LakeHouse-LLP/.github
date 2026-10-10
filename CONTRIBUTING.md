@@ -1,6 +1,6 @@
 # Contributing to LakeHouse Studio
 
-Thanks for stopping by - we are glad you are here. This guide gets you productive quickly on **Mac or Windows**. Public repos are either LakeHouse **widgets** (`Template-Widget`) or general **open-source** projects (`Template-OpenSource`) - see [docs/naming.md](docs/naming.md#which-template-should-i-use). Sen reviews and merges; please open a **draft PR** and do not merge into `Template-*` or `.github` yourself.
+Thanks for stopping by - we are glad you are here. This guide gets you productive quickly on **Mac or Windows**. Public repos are either LakeHouse **widgets** (`Template-LakeHouse-Widget`) or general **open-source** projects (`Template-LakeHouse-OpenSource`) - see [docs/naming.md](docs/naming.md#which-template-should-i-use). Sen reviews and merges; please open a **draft PR** and do not merge into `Template-LakeHouse-*` or `.github` yourself.
 
 House rules (agents and humans): [AGENTS.md](AGENTS.md). Code of conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Governance & response times: [GOVERNANCE.md](GOVERNANCE.md). Writing: [brand/WRITING-STYLE.md](brand/WRITING-STYLE.md).
 
@@ -69,7 +69,7 @@ git commit -s -m "Describe your change"
 - **ZERO COST** - GitHub Free only.
 - **Runners** - Public: GitHub-hosted. Private: self-hosted. Never self-hosted on public.
 - **Epics** - [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/SenZhang-Todo), not GitHub Issues.
-- **Naming** - Four templates (`Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource`). See [docs/naming.md](docs/naming.md).
+- **Naming** - `[Category]-LakeHouse-[DescriptiveName]` (Template / Package / Product). Four templates: `Template-LakeHouse-Monorepo`, `Template-LakeHouse-Sandbox`, `Template-LakeHouse-Widget`, `Template-LakeHouse-OpenSource`. See [docs/naming.md](docs/naming.md).
 - **Identity** - Do not hardcode the GitHub org login; use `org.json` or `${{ github.repository_owner }}`.
 
 ## Merge queue (public repos)
@@ -99,7 +99,7 @@ We keep a short [docs/lessons.md](docs/lessons.md) log so the same friction does
 When a lesson applies to **every** repo in the org:
 
 1. Raise it here in this defaults (`.github`) repo: add or update the entry in `docs/lessons.md`, and promote into `AGENTS.md`, a script, or CI when ready.
-2. Copy the promoted change into each active `Template-*` repo with its own PR (do not vendor by hand-copying unrelated libraries; keep the lesson text and any shared rule/script in sync).
+2. Copy the promoted change into each active `Template-LakeHouse-*` repo with its own PR (do not vendor by hand-copying unrelated libraries; keep the lesson text and any shared rule/script in sync).
 3. New repos created from a template inherit the lesson automatically once the template has been updated.
 
 Product-only lessons stay in that product repo’s own `docs/lessons.md` (or equivalent) and do not need a defaults PR.

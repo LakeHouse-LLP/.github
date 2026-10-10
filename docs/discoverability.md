@@ -2,12 +2,12 @@
 
 Zero-cost GitHub-side SEO for **LakeHouse Studio**. Brand tokens: dark-only, accent `#7DFFFF` ([`brand/`](../brand/)). Domain from [`.lakehouse/org.json`](../.lakehouse/org.json) - never `*.github.io`.
 
-Scope: this `.github` defaults repo, **Template-Widget**, **Template-OpenSource**, and public repos created from either. Naming / chooser: [naming.md](naming.md).
+Scope: this `.github` defaults repo, **Template-LakeHouse-Widget**, **Template-LakeHouse-OpenSource**, and public repos created from either. Naming / chooser: [naming.md](naming.md).
 
 | Public kind | Template | SEO angle |
 | --- | --- | --- |
-| LakeHouse **widget** | Template-Widget | Loadable widget for the LakeHouse host; agent-friendly |
-| General **open-source** | Template-OpenSource | Normal OSS product - **no** widget/`widget.json` wording |
+| LakeHouse **widget** | Template-LakeHouse-Widget | Loadable widget for the LakeHouse host; agent-friendly |
+| General **open-source** | Template-LakeHouse-OpenSource | Normal OSS product - **no** widget/`widget.json` wording |
 
 ## Repository description
 
@@ -23,7 +23,7 @@ Use **8 to 20** relevant lowercase topics. Prefer brand + domain keywords over t
 
 **Widget repos (add):** `widget`, `widgets`, `agent-friendly`, and domain tags (`revit`, `rhino`, `grasshopper`, `bim`, `aec`, `architecture`, `indesign`, …) when relevant.
 
-**Template-OpenSource / non-widget OSS:** use the shared pool + domain tags; **omit** `widget` / `widgets` unless the project truly is unrelated software that happens to use that word.
+**Template-LakeHouse-OpenSource / non-widget OSS:** use the shared pool + domain tags; **omit** `widget` / `widgets` unless the project truly is unrelated software that happens to use that word.
 
 CI enforces the count via the discoverability check (see below).
 
@@ -32,7 +32,7 @@ CI enforces the count via the discoverability check (see below).
 Keyword-rich and human:
 
 - **Widgets:** name the widget + LakeHouse Studio; say forkable/loadable into the office; audience (designers / small offices / agents).
-- **OSS (Template-OpenSource):** name the product; category and audience; **no** LakeHouse widget/host contract language.
+- **OSS (Template-LakeHouse-OpenSource):** name the product; category and audience; **no** LakeHouse widget/host contract language.
 
 ## Social preview
 
@@ -58,8 +58,8 @@ Sen pins up to six org repos. Recommended order:
 
 1. Flagship **public widget** and/or **OSS product** repo(s)  
 2. **Docs site** entrypoint (when it exists)  
-3. `Template-Widget` and/or `Template-OpenSource` (as scaffolds you want people to find)  
-4. Keep `Template-Monorepo` / sandboxes unpinned (private)
+3. `Template-LakeHouse-Widget` and/or `Template-LakeHouse-OpenSource` (as scaffolds you want people to find)  
+4. Keep `Template-LakeHouse-Monorepo` / sandboxes unpinned (private)
 
 Do not pin `sandbox-*`, `legacy-*`, or empty squat leftovers. Revisit pins when a launch checklist item ships ([launch-checklist.md](launch-checklist.md)).
 

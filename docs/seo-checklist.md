@@ -1,6 +1,6 @@
 # SEO checklist (reusable)
 
-Use for `Template-Widget`, `Template-OpenSource`, their public descendants, and the org docs site. Pair with [discoverability.md](discoverability.md) and [docs-site.md](docs-site.md). Match README/topics language to the template kind (widget vs general OSS).
+Use for `Template-LakeHouse-Widget`, `Template-LakeHouse-OpenSource`, their public descendants, and the org docs site. Pair with [discoverability.md](discoverability.md) and [docs-site.md](docs-site.md). Match README/topics language to the template kind (widget vs general OSS).
 
 ## GitHub repo
 

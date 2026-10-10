@@ -4,7 +4,7 @@
 
 ## Public repos (queue required on `main`)
 
-Applies to: `.github`, `Template-Widget`, `Template-OpenSource`, and every public widget/OSS repo made from them.
+Applies to: `.github`, `Template-LakeHouse-Widget`, `Template-LakeHouse-OpenSource`, and every public widget/OSS repo made from them.
 
 - Require the **merge queue** on `main` via a **repository ruleset** (or classic branch protection - prefer rulesets).
 - **Merge method: merge commit** only (house rule - never squash or rebase).
@@ -23,7 +23,7 @@ Exact Sen UI clicks: [sen-only-github-settings.md](sen-only-github-settings.md#m
 
 ## Private repos (no queue on Free)
 
-Applies to: `Template-Monorepo`, `Template-Sandbox`, `sandbox-*`, `legacy-*`.
+Applies to: `Template-LakeHouse-Monorepo`, `Template-LakeHouse-Sandbox`, `sandbox-*`, `legacy-*`.
 
 - Merge queue **not available** without Enterprise Cloud - do not enable paid plans for this.
 - Manual **bottom-up** merges with **merge commits**.

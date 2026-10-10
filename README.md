@@ -6,7 +6,7 @@
 
 # .github
 
-**LakeHouse Studio** org-wide shared defaults for a modular digital office for designers and agents. Public work uses **Template-Widget** (LakeHouse-extensible widgets) or **Template-OpenSource** (general OSS, no widget concepts). The private monorepo is the host. This repository holds community health files, release and SEO standards, the brand kit, and reusable workflows both public templates inherit.
+**LakeHouse Studio** org-wide shared defaults for a modular digital office for designers and agents. Public work uses **Template-LakeHouse-Widget** (LakeHouse-extensible widgets) or **Template-LakeHouse-OpenSource** (general OSS, no widget concepts). The private monorepo is the host. This repository holds community health files, release and SEO standards, the brand kit, and reusable workflows both public templates inherit.
 
 Sen reviews and merges. ZERO COST / GitHub Free. Do not merge without Sen.
 

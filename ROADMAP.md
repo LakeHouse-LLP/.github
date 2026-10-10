@@ -5,7 +5,7 @@ High-level direction for **LakeHouse Studio** - a modular digital office for des
 ## Near term
 
 - Solidify org defaults (community health, release, discoverability, contributor paths)
-- Grow `Template-Widget` / public widgets and `Template-OpenSource` / general OSS repos with clear `good first issue` / `help wanted` seeds
+- Grow `Template-LakeHouse-Widget` / public widgets and `Template-LakeHouse-OpenSource` / general OSS repos with clear `good first issue` / `help wanted` seeds
 - Stand up the Astro Starlight docs site on the custom domain ([docs/docs-site.md](docs/docs-site.md))
 - Ship regular SemVer releases so newcomers see momentum
 

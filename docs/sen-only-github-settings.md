@@ -20,7 +20,7 @@ These org/repo controls are **owner-only**. Agents and contributors must not cha
 
 **Availability (verified):** GitHub documents merge queues for **public repositories owned by an organization** (including Free), or **private** repos on **Enterprise Cloud** only. Do **not** enable paid plans for private-repo queues.
 
-Do this on each **public** repo (`.github`, `Template-Widget`, `Template-OpenSource`, public widgets/OSS):
+Do this on each **public** repo (`.github`, `Template-LakeHouse-Widget`, `Template-LakeHouse-OpenSource`, public widgets/OSS):
 
 ### A. Repo Pull Requests defaults
 
@@ -94,7 +94,7 @@ Favicon guidance for sites/apps: [`brand/README.md`](../brand/README.md).
 - Org/repo **secrets**, **variables**, and **rulesets** beyond what Free plan allows Sen to configure.
 - Creating/deleting org secrets for CI (prefer OIDC over secrets).
 - **Vercel** team Shared Environment Variables and project env vars ([deploy/vercel-env.md](deploy/vercel-env.md)) - agents must not mutate without explicit approval.
-- Approving merges / **merge-queue enqueues** into `Template-*` and `.github`.
+- Approving merges / **merge-queue enqueues** into `Template-LakeHouse-*` and `.github`.
 - Publishing draft GitHub Releases.
 - Uploading final **brand** assets into [`brand/`](../brand/).
 - **Owner’s vault** (Google Drive) for important credential values.

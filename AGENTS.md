@@ -16,16 +16,17 @@ Epics live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/Sen
 | Public + self-hosted | **Never** |
 | Merge method | **Merge commits only** (never squash or rebase-merge) |
 | Epics | SenZhang-Plus/SenZhang-Todo |
-| Templates | Four: `Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource` - see [docs/naming.md](docs/naming.md) |
+| Naming | `[Category]-LakeHouse-[DescriptiveName]` with categories **Template**, **Package**, **Product**. Long and clear beats ambiguous. Exceptions: `.github`, private `sandbox-*` / `legacy-*`. See [docs/naming.md](docs/naming.md). |
+| Templates | Four: `Template-LakeHouse-Monorepo`, `Template-LakeHouse-Sandbox`, `Template-LakeHouse-Widget`, `Template-LakeHouse-OpenSource` - see [docs/naming.md](docs/naming.md) |
 | Template curation | Follow [docs/template-curation.md](docs/template-curation.md) (pointer to `lakehouse-template-curation`; do not duplicate that skill here). Org skills use the `lakehouse-*` prefix. |
 | Org defaults | This `.github` / `defaultsRepo` repository |
 | Disposable private | `sandbox-*`, `legacy-*` |
 | Absorb legacy | Follow [docs/absorb-legacy.md](docs/absorb-legacy.md) (pointer to `sen-guide-absorb-repo`; do not duplicate that skill here) |
-| Public widgets | From **Template-Widget** - plain names; LakeHouse host extensibility |
-| Public OSS | From **Template-OpenSource** - plain names; **no** widget concepts |
+| Public widgets | From **Template-LakeHouse-Widget** → `Product-LakeHouse-[DescriptiveName]`; LakeHouse host extensibility |
+| Public OSS | From **Template-LakeHouse-OpenSource** → `Product-LakeHouse-[DescriptiveName]` or `Package-LakeHouse-[DescriptiveName]`; **no** widget concepts |
 | Package scope | Brand-based from `org.json` (`packageScope`) - **not** the org login; widgets use `@lakehouse/widget-sdk` |
 | Public links | Custom `domain` from `org.json` - **never** `*.github.io` |
-| Retired names | See [retired-names.txt](retired-names.txt) - do not reuse (`Template-OpenSource` is **active**, not retired) |
+| Retired names | See [retired-names.txt](retired-names.txt) - do not reuse |
 | Org rename | [docs/org-rename-runbook.md](docs/org-rename-runbook.md) |
 
 Settings only Sen changes in the GitHub UI: [docs/sen-only-github-settings.md](docs/sen-only-github-settings.md).
@@ -69,7 +70,7 @@ Agents and contributors must **never**:
 2. **Change org/repo settings, rulesets, or secrets** (Sen-only in the GitHub UI / approved channels).
 3. **Force-push** to any branch on `origin` (including “their” feature branches on shared remotes when policy forbids it - default: no force-push to org remotes).
 4. **Delete or rename** repositories, branches, or tags.
-5. **Merge** into `Template-*` or `.github`, or **enqueue** PRs on the merge queue (Sen merges / enqueues those).
+5. **Merge** into `Template-LakeHouse-*` or `.github`, or **enqueue** PRs on the merge queue (Sen merges / enqueues those).
 6. **Vendor** shared code (copy-paste org libraries into repos); consume shared packages (e.g. `@lakehouse/widget-sdk`) or templates instead.
 7. **Push to an unexpected remote** (only the repo’s configured `origin` for this org / the intended fork; never add or push to unrelated remotes).
 8. **Hardcode the GitHub org login** in workflows, badges, or docs (use `org.json` or `github.repository_owner`; allowlisted files only for historical/rename notes).
@@ -125,7 +126,7 @@ After each task, the agent notes any friction (unclear docs, missing checks, bri
 1. **Fixes it in the same PR** when the fix is small and in scope, or
 2. **Logs it** in [docs/lessons.md](docs/lessons.md) with a short dated entry (lesson, action, status: `open` / `fixed` / `promoted`).
 
-A lesson that comes up repeatedly gets **promoted** to a house rule, script, or CI check. Org-wide lessons land here first, then propagate to `Template-*` repos (see [CONTRIBUTING.md](CONTRIBUTING.md#org-wide-lessons)). Fill the PR template **What did we learn?** section when you ship.
+A lesson that comes up repeatedly gets **promoted** to a house rule, script, or CI check. Org-wide lessons land here first, then propagate to `Template-LakeHouse-*` repos (see [CONTRIBUTING.md](CONTRIBUTING.md#org-wide-lessons)). Fill the PR template **What did we learn?** section when you ship.
 
 ## Security & secrets
 
