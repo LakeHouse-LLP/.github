@@ -20,6 +20,7 @@ Epics live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/Sen
 | Template curation | Follow [docs/template-curation.md](docs/template-curation.md) (pointer to `lakehouse-template-curation`; do not duplicate that skill here). Org skills use the `lakehouse-*` prefix. |
 | Org defaults | This `.github` / `defaultsRepo` repository |
 | Disposable private | `sandbox-*`, `legacy-*` |
+| Absorb legacy | Follow [docs/absorb-legacy.md](docs/absorb-legacy.md) (pointer to `sen-guide-absorb-repo`; do not duplicate that skill here) |
 | Public widgets | From **Template-Widget** - plain names; LakeHouse host extensibility |
 | Public OSS | From **Template-OpenSource** - plain names; **no** widget concepts |
 | Package scope | Brand-based from `org.json` (`packageScope`) - **not** the org login; widgets use `@lakehouse/widget-sdk` |
