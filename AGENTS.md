@@ -17,6 +17,7 @@ Epics live in [SenZhang-Plus/SenZhang-Todo](https://github.com/SenZhang-Plus/Sen
 | Merge method | **Merge commits only** (never squash or rebase-merge) |
 | Epics | SenZhang-Plus/SenZhang-Todo |
 | Templates | Four: `Template-Monorepo`, `Template-Sandbox`, `Template-Widget`, `Template-OpenSource` - see [docs/naming.md](docs/naming.md) |
+| Template curation | Follow [docs/template-curation.md](docs/template-curation.md) (pointer to `lakehouse-template-curation`; do not duplicate that skill here). Org skills use the `lakehouse-*` prefix. |
 | Org defaults | This `.github` / `defaultsRepo` repository |
 | Disposable private | `sandbox-*`, `legacy-*` |
 | Public widgets | From **Template-Widget** - plain names; LakeHouse host extensibility |
