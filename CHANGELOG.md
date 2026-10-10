@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Absorb-legacy pointer: [docs/absorb-legacy.md](docs/absorb-legacy.md) and one-line `AGENTS.md` row pointing at the `sen-guide-absorb-repo` skill (no duplicated absorb steps).
 - Template curation pointer: [docs/template-curation.md](docs/template-curation.md) and one-line `AGENTS.md` row pointing at the `lakehouse-template-curation` skill (org skills use the `lakehouse-*` prefix; no duplicated curation steps).
 - Continuous self-improvement: house rule in `AGENTS.md`, [docs/lessons.md](docs/lessons.md) log, PR template **What did we learn?**, and CONTRIBUTING section on org-wide lesson flow into `Template-*` repos.
 - Brand kit **v0.3** under `brand/` (tokens, writing, final assets, Python build scripts); profile/README header + tagline; `scripts/copy-lint.mjs`; Sen-only avatar (`final/png/appicon-1024.png`) and social preview (`final/social-preview.png`) steps.
