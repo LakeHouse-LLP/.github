@@ -116,6 +116,15 @@ Agents and contributors must **never**:
 - For public repos: DCO `Signed-off-by` on commits.
 - Prefer merge commits when merging is explicitly allowed by Sen.
 
+## Continuous self-improvement
+
+After each task, the agent notes any friction (unclear docs, missing checks, brittle scripts, repeated manual steps) and either:
+
+1. **Fixes it in the same PR** when the fix is small and in scope, or
+2. **Logs it** in [docs/lessons.md](docs/lessons.md) with a short dated entry (lesson, action, status: `open` / `fixed` / `promoted`).
+
+A lesson that comes up repeatedly gets **promoted** to a house rule, script, or CI check. Org-wide lessons land here first, then propagate to `Template-*` repos (see [CONTRIBUTING.md](CONTRIBUTING.md#org-wide-lessons)). Fill the PR template **What did we learn?** section when you ship.
+
 ## Security & secrets
 
 - No secrets or client content in issues, PRs, logs, or artifacts.

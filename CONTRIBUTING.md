@@ -92,6 +92,18 @@ Recommended tool: `git rebase --update-refs` (Git 2.38+). CI must use `pull_requ
 - Keep a Changelog + changesets for pnpm repos - [docs/changelog-convention.md](docs/changelog-convention.md)
 - Releases: [docs/releasing.md](docs/releasing.md)
 
+## Org-wide lessons
+
+We keep a short [docs/lessons.md](docs/lessons.md) log so the same friction does not get rediscovered. Agents and humans note a lesson after a task (also via the PR template **What did we learn?**). A lesson that repeats gets promoted to a house rule, script, or CI check (see [AGENTS.md](AGENTS.md#continuous-self-improvement)).
+
+When a lesson applies to **every** repo in the org:
+
+1. Raise it here in this defaults (`.github`) repo: add or update the entry in `docs/lessons.md`, and promote into `AGENTS.md`, a script, or CI when ready.
+2. Copy the promoted change into each active `Template-*` repo with its own PR (do not vendor by hand-copying unrelated libraries; keep the lesson text and any shared rule/script in sync).
+3. New repos created from a template inherit the lesson automatically once the template has been updated.
+
+Product-only lessons stay in that product repo’s own `docs/lessons.md` (or equivalent) and do not need a defaults PR.
+
 ## Recognition
 
 We use [All Contributors](https://allcontributors.org/). After your PR lands, you may appear in the README contributors table (see [`.all-contributorsrc`](.all-contributorsrc)).

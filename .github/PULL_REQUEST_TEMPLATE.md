@@ -32,6 +32,12 @@ Merge **bottom-up** with a **merge commit**, then retarget the next PR to `main`
 
 <!-- Commands run, CI links, what you verified. -->
 
+## What did we learn?
+
+<!-- Friction, surprise, or missing check from this work. Fix in this PR if small, else log in docs/lessons.md (lesson / action / status). Leave N/A if nothing new. -->
+
+-
+
 ## Screenshots
 
 <!-- If UI changed; otherwise N/A. -->
