@@ -22,11 +22,14 @@ These org/repo controls are **owner-only**. Agents and contributors must not cha
 
 Do this on each **public** repo (`.github`, `Template-Widget`, `Template-OpenSource`, public widgets/OSS):
 
-### A. Repo merge methods
+### A. Repo Pull Requests defaults
 
 1. Repo → **Settings** → **General** → **Pull Requests**.
 2. Enable **Allow merge commits**.
 3. Disable **Allow squash merging** and **Allow rebase merging**.
+4. Enable **Automatically delete head branches** (default for every org repo).
+
+**Stacked PRs caution:** before merging a base PR, retarget the next PR in the stack to `main` (or its new parent). Deleting the base head branch can close PRs that still target it. See [CONTRIBUTING.md](../CONTRIBUTING.md#stacked-prs), [AGENTS.md](../AGENTS.md#stacked-prs), and [merge-queue.md](merge-queue.md).
 
 ### B. Ruleset on `main` (preferred)
 
@@ -76,6 +79,7 @@ Favicon guidance for sites/apps: [`brand/README.md`](../brand/README.md).
 - [ ] Tag rulesets for release tags
 - [ ] Private vulnerability reporting on
 - [ ] Merge commits only (squash/rebase off)
+- [ ] **Automatically delete head branches** on (Settings → General → Pull Requests); retarget stacked children before merging the base ([CONTRIBUTING.md](../CONTRIBUTING.md#stacked-prs))
 - [ ] **Public:** merge queue ruleset on `main` (section above)
 - [ ] **Private:** up-to-date + green CI; no merge queue
 - [ ] npm **OIDC trusted publishing** configured for packages (no long-lived npm tokens)

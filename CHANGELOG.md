@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Sen-only GitHub settings: enable **Automatically delete head branches** on every org repo, with a stacked-PR retarget caution ([docs/sen-only-github-settings.md](docs/sen-only-github-settings.md)).
 - Absorb-legacy pointer: [docs/absorb-legacy.md](docs/absorb-legacy.md) and one-line `AGENTS.md` row pointing at the `sen-guide-absorb-repo` skill (no duplicated absorb steps).
 - Template curation pointer: [docs/template-curation.md](docs/template-curation.md) and one-line `AGENTS.md` row pointing at the `lakehouse-template-curation` skill (org skills use the `lakehouse-*` prefix; no duplicated curation steps).
 - Continuous self-improvement: house rule in `AGENTS.md`, [docs/lessons.md](docs/lessons.md) log, PR template **What did we learn?**, and CONTRIBUTING section on org-wide lesson flow into `Template-*` repos.
