@@ -1,0 +1,57 @@
+# Private-repo CI starter (self-hosted only). Never use on public repos (tier-guard).
+# Same concurrency + docs paths-ignore as ci.yml to shrink the shared Windows queue.
+# Pair with workflow-templates/require-release-notes.yml and changelog-check.yml so
+# docs / release-notes checks still run when this workflow is skipped.
+# Pins: .lakehouse/pins.json — do not hardcode the GitHub org login.
+
+name: CI
+
+on:
+  pull_request:
+    paths-ignore:
+      - "**/*.md"
+      - "docs/**"
+      - "release-notes/**"
+  push:
+    branches:
+      - $default-branch
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.ref != format('refs/heads/{0}', github.event.repository.default_branch) }}
+
+permissions: {}
+
+jobs:
+  ci:
+    runs-on: [self-hosted]
+    defaults:
+      run:
+        shell: bash
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        # pin: .lakehouse/pins.json → actions.checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install & verify
+        run: |
+          set -euo pipefail
+          # Customize for the target repo (Revit / .NET / Node, etc.).
+          if [ -f pnpm-lock.yaml ]; then
+            corepack enable
+            pnpm install --frozen-lockfile
+            pnpm test
+          elif [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci
+            npm test --if-present
+            npm run lint --if-present
+          elif [ -f package.json ]; then
+            npm install
+            npm test --if-present
+            npm run lint --if-present
+          else
+            echo "No package.json — replace this step with language-specific build/test commands."
+          fi

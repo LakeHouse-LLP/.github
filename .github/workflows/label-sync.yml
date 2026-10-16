@@ -46,6 +46,13 @@ on:
       - .github/labels.yml
       - .github/workflows/label-sync.yml
 
+# Reusable caller may be public or private. This defaults repo is public
+# (ubuntu-latest). Callers in private repos should wrap or override runs-on via
+# a thin local workflow if they must stay off GitHub-hosted minutes.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.ref != format('refs/heads/{0}', github.event.repository.default_branch) }}
+
 permissions: {}
 
 jobs:

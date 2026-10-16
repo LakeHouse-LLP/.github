@@ -1,6 +1,9 @@
 # Requires each PR to touch CHANGELOG.md / .changeset/ or carry skip-changelog.
 # No branches filter — stacked PRs into feature branches must run this check.
 # merge_group: required for public-repo merge queue checks (docs/merge-queue.md).
+#
+# Metadata-only: no paths-ignore (must still run when heavy CI skips docs-only PRs).
+# Public → ubuntu-latest. Private → self-hosted (lightweight; never GitHub-hosted minutes).
 
 name: changelog-check
 
@@ -8,11 +11,18 @@ on:
   pull_request:
   merge_group:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions: {}
 
 jobs:
   changelog:
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted"]') || fromJSON('["ubuntu-latest"]') }}
+    defaults:
+      run:
+        shell: bash
     permissions:
       contents: read
       pull-requests: read

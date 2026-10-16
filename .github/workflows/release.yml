@@ -56,6 +56,8 @@ on:
         required: false
         default: ""
 
+# Release publish path: do NOT cancel-in-progress. Concurrent callers use distinct
+# tags/refs; canceling a main/tag publish mid-flight is unsafe.
 permissions: {}
 
 jobs:

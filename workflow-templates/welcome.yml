@@ -11,11 +11,14 @@ on:
   pull_request_target:
     types: [opened]
 
+# Metadata-only (comment). Public ubuntu-latest; private self-hosted (never burn
+# private GitHub-hosted minutes). No cancel group needed beyond one-shot events.
+
 permissions: {}
 
 jobs:
   welcome:
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted"]') || fromJSON('["ubuntu-latest"]') }}
     permissions:
       issues: write
       pull-requests: write

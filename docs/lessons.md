@@ -19,3 +19,9 @@ How org-wide lessons reach other repos: [CONTRIBUTING.md](../CONTRIBUTING.md#org
 ## Entries
 
 <!-- Newest first. Keep each entry short. -->
+
+### 2026-10-16 - private repo access for org CI PRs
+
+- **Lesson:** A Cloud Agent GitHub App installed only on the public defaults repo cannot list or PR private org repos that share the Windows runner.
+- **Action:** Sen grants the app All repositories (or each private runner consumer); then re-run queue-relief PRs per [docs/ci-runner-queue.md](ci-runner-queue.md).
+- **Status:** open
