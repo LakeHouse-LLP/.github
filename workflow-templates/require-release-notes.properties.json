@@ -1,0 +1,7 @@
+{
+  "name": "Require release notes",
+  "description": "Lightweight metadata check for repos with release-notes/. Public uses ubuntu-latest; private stays self-hosted. Pair with CI paths-ignore so docs-only and notes-only PRs do not queue heavy Windows jobs.",
+  "iconName": "book",
+  "categories": ["continuous-integration"],
+  "filePatterns": ["release-notes/**/*", ".github/release-notes-template.md"]
+}

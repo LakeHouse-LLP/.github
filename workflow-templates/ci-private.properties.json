@@ -1,0 +1,7 @@
+{
+  "name": "CI (private / self-hosted)",
+  "description": "Private-repo CI with concurrency cancel-in-progress (not on default branch) and docs paths-ignore to reduce shared Windows runner queue. Never use on public repos.",
+  "iconName": "octoface",
+  "categories": ["continuous-integration"],
+  "filePatterns": ["package.json", "*.sln", "*.csproj"]
+}

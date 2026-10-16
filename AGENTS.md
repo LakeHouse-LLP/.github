@@ -38,6 +38,7 @@ Settings only Sen changes in the GitHub UI: [docs/sen-only-github-settings.md](d
 - **Private** repos: no queue on Free - manual merge commits + up-to-date + green CI.
 - Required CI workflows must include `merge_group:` (in addition to `pull_request` with no branches filter).
 - Agents **never enqueue or merge** PRs (including merge queue). Sen does.
+- Shared private Windows runner queue relief: [docs/ci-runner-queue.md](docs/ci-runner-queue.md) (concurrency, docs `paths-ignore`, lightweight metadata on self-hosted).
 
 ## Stacked PRs
 

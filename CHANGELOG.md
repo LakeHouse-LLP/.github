@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- CI queue relief for the shared private Windows runner: concurrency groups with cancel-in-progress (not on default-branch pushes), docs `paths-ignore` on heavy CI/gitleaks, `ci-private` + `require-release-notes` templates, and [docs/ci-runner-queue.md](docs/ci-runner-queue.md). Metadata checks stay on `ubuntu-latest` only when public; private stays self-hosted and lightweight.
+
 ### Changed
 
 - Naming: durable repos use `[Category]-LakeHouse-[DescriptiveName]` (Template / Package / Product); long and clear beats ambiguous. Exceptions: `.github`, private `sandbox-*` / `legacy-*`. Templates renamed to `Template-LakeHouse-*`; docs and links updated. See [docs/naming.md](docs/naming.md).

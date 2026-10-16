@@ -2,6 +2,7 @@
 # Public → github-hosted only. Private → self-hosted only.
 # Keep pull_request without a branches filter so stacked PRs are checked.
 # merge_group: required for public-repo merge queue checks (docs/merge-queue.md).
+# Lightweight: no checkout. Concurrency cancels superseded PR runs (not default branch).
 
 name: tier-guard
 
@@ -13,12 +14,19 @@ on:
       - $default-branch
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.ref != format('refs/heads/{0}', github.event.repository.default_branch) }}
+
 permissions: {}
 
 jobs:
   tier-guard:
-    # Public template default. Private repos must set runs-on to self-hosted labels.
-    runs-on: ubuntu-latest
+    # Public: ubuntu-latest. Private: must set runs-on to self-hosted labels (never ubuntu).
+    runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted"]') || fromJSON('["ubuntu-latest"]') }}
+    defaults:
+      run:
+        shell: bash
     permissions:
       contents: read
     steps:

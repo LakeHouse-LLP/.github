@@ -3,16 +3,29 @@
 # IMPORTANT: do not add a branches filter under pull_request — stacked PRs must get CI.
 # merge_group: required for public-repo merge queue checks (docs/merge-queue.md).
 # Pins: .lakehouse/pins.json — do not hardcode the GitHub org login.
+#
+# Queue relief (shared Windows self-hosted): concurrency cancels superseded PR runs;
+# paths-ignore skips docs-only changes. Do not cancel in-progress on default-branch
+# pushes (release tagging / publish). Keep require-release-notes as its own workflow
+# so release-notes/** still get a check when heavy CI is skipped.
 
 name: CI
 
 on:
   pull_request:
+    paths-ignore:
+      - "**/*.md"
+      - "docs/**"
+      - "release-notes/**"
   merge_group:
   push:
     branches:
       - $default-branch
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.ref != format('refs/heads/{0}', github.event.repository.default_branch) }}
 
 permissions: {}
 
