@@ -1,6 +1,6 @@
 {
   "name": "LakeHouse CI",
-  "description": "Starter CI on pull_request (no branches filter) and pushes to the default branch. GitHub-hosted runners for public repos. Actions pinned by SHA.",
+  "description": "Starter CI with concurrency cancel-in-progress (not on default branch), docs paths-ignore, pull_request (no branches filter), and default-branch pushes. GitHub-hosted for public repos. Actions pinned by SHA.",
   "iconName": "octicon rocket",
   "categories": ["Continuous integration"]
 }
